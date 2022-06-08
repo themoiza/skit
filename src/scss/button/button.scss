@@ -1,0 +1,38 @@
+button{
+    all: unset;
+}
+button, .btn{
+    font-weight: 600;
+    border: var(--border) solid var(--foreground);
+    background-color: var(--background);
+    color: var(--foreground);
+    border-radius: var(--rd) var(--rd) var(--rd) var(--rd);
+    font-size: var(--font-size);
+    height: calc(var(--fild-h) - (var(--border) * 2));
+    padding: 0 calc(var(--pd) * 2);
+    cursor: pointer;
+}
+.btn-pri{
+    background-color: var(--pri);
+    color: var(--white);
+    border: var(--border) solid var(--pri);
+    &:hover{
+        border: var(--border) solid var(--white);
+    }
+}
+.btn-sec{
+    background-color: var(--sec);
+    color: var(--white);
+    border: var(--border) solid var(--sec);
+    &:hover{
+        border: var(--border) solid var(--white);
+    }
+}
+.btn-danger{
+    background-color: var(--danger);
+    color: var(--white);
+    border: var(--border) solid var(--danger);
+    &:hover{
+        border: var(--border) solid var(--white);
+    }
+}

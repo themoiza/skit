@@ -1,9 +1,6 @@
-:root{
-    --pri: #303088;
-    --sec: #1d741d;
-    --white: #ffffff;
-    --dark: #080808;
-    --danger: #9c2a2a;
-}
-
+@import 'vars.scss';
 @import 'reset.scss';
+
+/*BUTTONS*/
+@import 'button/button.scss';
+@import 'tabs/tabs.scss';

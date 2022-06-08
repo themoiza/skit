@@ -1,0 +1,52 @@
+.sk-tabs{
+	display: block;
+	width: 100%;
+	background-color: var(--pri);
+}
+.sk-tabs-btns{
+	display: flex;
+	padding-left: 1px;
+	padding-top: 2px;
+
+	& div{
+		border-bottom: 3px solid var(--dark);
+	}
+
+	& button{
+		border: none !important;
+		background-color: var(--dark);
+		color: var(--white);
+		height: var(--fild-h);
+	}
+
+	& .active{
+		border-bottom: 3px solid var(--sec);
+	}
+}
+.sk-tabs-area{
+
+	position: relative;
+	display: block;
+	width: 100%;
+    background-color: var(--dark1);
+	border: 1px solid var(--pri);
+	border-top: none;
+
+	& .active{
+		display: block;
+		z-index: 1;
+	}
+
+	& .inactive{
+		display: block;
+		position: absolute;
+		opacity: 0;
+		left: 0px;
+		top: 0px;
+		height: 1px;
+		width: 1px;
+		z-index: 0;
+		overflow: auto;
+		pointer-events: none;
+	}
+}

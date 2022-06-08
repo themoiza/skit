@@ -39,7 +39,7 @@ gulp.task('jsBuild', function(cb){
 	])
 	.pipe(uglify())
 		.pipe(concat('skit.min.js'))
-		.pipe(gulp.dest('dist/js/'))
+		.pipe(gulp.dest('skit-dist'))
 		.on('error', function(err) {
 	})
 });
@@ -47,7 +47,7 @@ gulp.task('jsBuild', function(cb){
 gulp.task('cssBuild', function(){
 
 	var sassFiles = 'src/scss/index.scss',
-		cssDest = 'dist/css';
+		cssDest = 'skit-dist';
 
 	return gulp.src(sassFiles)
 		.pipe(sourcemaps.init())
