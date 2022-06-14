@@ -7,3 +7,22 @@
 body{
 	background-color: var(--background);
 }
+
+.hidden {
+    margin-top: -9999px !important;
+    top: 0px;
+    left: 0px;
+    width: 1px !important;
+    height: 1px !important;
+    position: absolute !important;
+    opacity: 0 !important;
+    overflow: auto;
+}
+
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+}

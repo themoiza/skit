@@ -8,6 +8,7 @@ button, .btn{
     color: var(--foreground);
     border-radius: var(--rd) var(--rd) var(--rd) var(--rd);
     font-size: var(--font-size);
+    text-align: center;
     height: calc(var(--fild-h) - (var(--border) * 2));
     padding: 0 calc(var(--pd) * 2);
     cursor: pointer;

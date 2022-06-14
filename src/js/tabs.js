@@ -72,32 +72,4 @@ class Tabs{
 			}
 		}
 	}
-
-	removeTab(index){
-
-		// UPDATE
-		this.buttons = this.tabHeader.querySelectorAll('button[data-index]');
-
-		for(var b = 0; b < this.buttons.length; b++){
-
-			if(Number(index) === Number(this.buttons[b].getAttribute('data-index'))){
-
-				this.buttons[b].parentElement.removeChild(this.buttons[b]);
-			}
-		}
-
-		// UPDATE
-		this.buttons = this.tabHeader.querySelectorAll('button[data-index]');
-
-		// GO TO FISRT TAB
-		this.setTab();
-	}
-
-	addTab(tabNew){
-
-	}
-
-	init(config){
-
-	}
 }

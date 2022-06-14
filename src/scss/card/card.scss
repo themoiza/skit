@@ -1,0 +1,12 @@
+.card{
+    background-color: var(--background);
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    & .title{
+        color: var(--foreground);
+        font-weight: bold;
+        font-size: 16px;
+    }
+}
