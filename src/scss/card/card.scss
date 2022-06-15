@@ -1,11 +1,11 @@
 .card{
-    background-color: var(--background);
+    background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) + 1%));
     display: block;
     width: 100%;
     box-sizing: border-box;
 
     & .title{
-        color: var(--foreground);
+        color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
         font-weight: bold;
         font-size: 16px;
     }

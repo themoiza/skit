@@ -1,7 +1,7 @@
 .sk-tabs{
 	display: block;
 	width: 100%;
-	background-color: var(--pri);
+	background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 }
 .sk-tabs-btns{
 	display: flex;
@@ -9,18 +9,26 @@
 	padding-top: 2px;
 
 	& div{
-		border-bottom: 3px solid var(--dark);
+		border-bottom: 3px solid hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 	}
 
 	& button{
 		border: none !important;
-		background-color: var(--dark);
-		color: var(--white);
+		background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+		color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 		height: var(--fild-h);
+
+		&:hover{
+			background-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 3%));
+		}
 	}
 
 	& .active{
-		border-bottom: 3px solid var(--sec);
+		border-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+
+		& button{
+			background-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 6%));
+		}
 	}
 }
 .sk-tabs-area{
@@ -28,8 +36,8 @@
 	position: relative;
 	display: block;
 	width: 100%;
-    background-color: var(--dark1);
-	border: 1px solid var(--pri);
+    background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+	border: 1px solid hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 	border-top: none;
 
 	& .active{

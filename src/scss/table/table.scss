@@ -4,14 +4,15 @@
 	width: 100%;
 }
 table{
+
 	width: 100%;
 	border-collapse: collapse;
-	background-color: var(--foreground);
-	color: var(--background);
+
+	--dark-lig: 20%;
 
 	& thead{
-		background-color: var(--background);
-		color: var(--foreground);
+		background-color: hsl(var(--dark-hue) var(--dark-sat) calc(var(--dark-lig) - 1%));
+		color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 		& th{
 			padding: 10px 10px;
 		}
@@ -19,10 +20,16 @@ table{
 
 	& tbody{
 
-		background-color: var(--background);
-		color: var(--foreground);
+		& tr:nth-child(even){
+			background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) - 1%));
+		}
+
+		& tr:nth-child(odd){
+			background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) + 1%));
+		}
 
 		& td{
+			color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 			padding: 5px 10px;
 		}
 	}

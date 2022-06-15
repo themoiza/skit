@@ -1,39 +1,76 @@
 button{
-    all: unset;
+	all: unset;
 }
 button, .btn{
-    font-weight: 600;
-    border: var(--border) solid var(--foreground);
-    background-color: var(--background);
-    color: var(--foreground);
-    border-radius: var(--rd) var(--rd) var(--rd) var(--rd);
-    font-size: var(--font-size);
-    text-align: center;
-    height: calc(var(--fild-h) - (var(--border) * 2));
-    padding: 0 calc(var(--pd) * 2);
-    cursor: pointer;
+	font-weight: 600;
+	border: var(--border) solid hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) + 10%));
+	background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) + 10%));
+	color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	border-radius: var(--rd) var(--rd) var(--rd) var(--rd);
+	font-size: calc(var(--font-size) - 2px);
+	min-width: 60px;
+	text-align: center;
+	height: calc(var(--fild-h) - (var(--border) * 2));
+	padding: 0 var(--pd);
+	cursor: pointer;
 }
+
+.btn-med{
+	font-size: calc(var(--font-size) * 1.15);
+	height: calc((var(--fild-h) - var(--border)) * 1.25);
+	padding: 0 calc(var(--pd) * 2);
+}
+
 .btn-pri{
-    background-color: var(--pri);
-    color: var(--white);
-    border: var(--border) solid var(--pri);
-    &:hover{
-        border: var(--border) solid var(--white);
-    }
+	background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+	border: var(--border) solid hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	&:hover{
+		background-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 2%));
+		border-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 2%));
+	}
+	&:focus{
+		background-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 5%));
+		border-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 5%));
+	}
+	&:active{
+		background-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 8%));
+		border-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 8%));
+	}
 }
+
 .btn-sec{
-    background-color: var(--sec);
-    color: var(--white);
-    border: var(--border) solid var(--sec);
-    &:hover{
-        border: var(--border) solid var(--white);
-    }
+	background-color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
+	border: var(--border) solid hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
+	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	&:hover{
+		background-color: hsl(var(--sec-hue) var(--sec-sat) calc(var(--sec-lig) - 2%));
+		border-color: hsl(var(--sec-hue) var(--sec-sat) calc(var(--sec-lig) - 2%));
+	}
+	&:focus{
+		background-color: hsl(var(--sec-hue) var(--sec-sat) calc(var(--sec-lig) - 5%));
+		border-color: hsl(var(--sec-hue) var(--sec-sat) calc(var(--sec-lig) - 5%));
+	}
+	&:active{
+		background-color: hsl(var(--sec-hue) var(--sec-sat) calc(var(--sec-lig) - 8%));
+		border-color: hsl(var(--sec-hue) var(--sec-sat) calc(var(--sec-lig) - 8%));
+	}
 }
+
 .btn-danger{
-    background-color: var(--danger);
-    color: var(--white);
-    border: var(--border) solid var(--danger);
-    &:hover{
-        border: var(--border) solid var(--white);
-    }
+	background-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
+	border: var(--border) solid hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
+	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	&:hover{
+		background-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) - 2%));
+		border-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) - 2%));
+	}
+	&:focus{
+		background-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) - 5%));
+		border-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) - 5%));
+	}
+	&:active{
+		background-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) - 8%));
+		border-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) - 8%));
+	}
 }

@@ -35,6 +35,8 @@ class Tabs{
 
 							this.component.setTab(this.tabs[x].for);
 
+							localStorage.setItem('tab-'+this.component.id, i);
+
 						}else{
 
 							this.tabs[x]['active'] = '';
@@ -44,7 +46,15 @@ class Tabs{
 			},
 			created: function() {
 
-				this.setTab(0);
+				let i = 0;
+
+				if(localStorage.getItem('tab-'+this.component.id)){
+
+					i = localStorage.getItem('tab-'+this.component.id);
+
+				}
+
+				this.setTab(i);
 			}
 		});
 	}

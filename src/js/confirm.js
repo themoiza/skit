@@ -1,12 +1,17 @@
 window.Confirm = function(obj){
 
-	if(obj.message && obj.ok){
+	if(obj.ok){
 
-		var mask = `
+		let message = '';
+		if(obj.message){
+			message = `<div class="Confirm-message">`+obj.message+`</div>`;
+		}
+
+		let mask = `
 			<div class="Confirm no-select">
 				<div class="Confirm-title">`+obj.title+`</div>
-				<div class="Confirm-message">`+obj.message+`</div>
-				<div class="Confirm-buttons">
+				`+message+`
+				<div class="Confirm-actions">
 					<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button>
 				</div>
 			</div>`;
@@ -15,11 +20,10 @@ window.Confirm = function(obj){
 
 			mask = `
 				<div class="Confirm no-select">
-				<div class="Confirm-title">`+obj.title+`</div>
-				<div class="Confirm-message">`+obj.message+`</div>
-					<div class="Confirm-buttons">
-					<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button>
-						<button id="Confirm-no" class="`+obj.noclass+`">`+obj.no+`</button> 
+					<div class="Confirm-title">`+obj.title+`</div>
+					`+message+`
+					<div class="Confirm-actions">
+						<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button><button id="Confirm-no" class="`+obj.noclass+`">`+obj.no+`</button> 
 					</div>
 				</div>`;
 		}
