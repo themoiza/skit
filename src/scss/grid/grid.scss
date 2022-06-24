@@ -1,6 +1,10 @@
 .grid{
 	display: flex;
 	flex-wrap: wrap;
+    flex-direction: row;
+}
+.vcenter{
+	align-items: center;
 }
 .col{
 	flex: 0 0 auto;
@@ -96,6 +100,19 @@
 	}
 }
 
+@mixin widthPX{
+
+	$i: 1;
+
+	@while $i <= 1000 {
+
+		.w#{$i}{ 
+			width: #{$i}px; 
+		}
+		$i: $i + 1;
+	}
+}
+
 @mixin mgPd{
 
 	$i: 1;
@@ -152,4 +169,5 @@
 
 @include calc;
 @include widthP;
+@include widthPX;
 @include mgPd;

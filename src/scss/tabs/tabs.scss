@@ -36,7 +36,7 @@
 	position: relative;
 	display: block;
 	width: 100%;
-    background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+    background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 	border: 1px solid hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 	border-top: none;
 

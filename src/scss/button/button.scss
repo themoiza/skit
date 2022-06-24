@@ -12,6 +12,7 @@ button, .btn{
 	text-align: center;
 	height: calc(var(--fild-h) - (var(--border) * 2));
 	padding: 0 var(--pd);
+	box-sizing: border-box;
 	cursor: pointer;
 }
 

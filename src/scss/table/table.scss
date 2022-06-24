@@ -2,6 +2,22 @@
 	display: block;
 	overflow-x: auto;
 	width: 100%;
+
+	& .v-text{
+
+		--dark-lig: 20%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		writing-mode: vertical-lr;
+		background-color: hsl(var(--dark-hue) var(--dark-sat) calc(var(--dark-lig) - 1%));
+		color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+		width: 100%;
+		padding: 20px 0px;
+		box-sizing: border-box;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 }
 table{
 
@@ -15,6 +31,7 @@ table{
 		color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 		& th{
 			padding: 10px 10px;
+			font-weight: bold;
 		}
 	}
 

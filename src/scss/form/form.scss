@@ -1,5 +1,23 @@
 .field{
-    display: flex;
-    height: var(--fild-h);
-    place-items: center;
+	display: flex;
+	height: var(--fild-h);
+	place-items: center;
+	position: relative;
+
+	& input[type="text"],
+	& input[type="tel"],
+	& input[type="email"]{
+		border: none;
+		height: inherit;
+		outline: none;
+		padding: 0 10px;
+		box-sizing: border-box;
+		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+	}
+
+	& i{
+		position: absolute;
+		right: 5px;
+		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+	}
 }
