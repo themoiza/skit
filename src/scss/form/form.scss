@@ -1,23 +1,121 @@
+/*
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email"> ✅
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number"> ✅
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+
+<input type="tel"> ✅
+<input type="text"> ✅
+<input type="time">
+<input type="url">
+<input type="week">
+*/
+
 .field{
-	display: flex;
-	height: var(--fild-h);
-	place-items: center;
+	display: inline-block;
+	vertical-align: bottom;
 	position: relative;
 
+	& label{
+		display: block;
+		box-sizing: border-box;
+		padding-top: calc(var(--pd) / 2);
+		padding-bottom: calc(var(--pd) / 3);
+		font-weight: bold;
+		font-size: var(--font-size);
+	}
+
+	& input[type="email"],
+	& input[type="password"],
+	& input[type="number"],
 	& input[type="text"],
 	& input[type="tel"],
-	& input[type="email"]{
+	& select{
+		font-family: var(--font-family);
+		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+		border-radius: var(--rd);
+		width: 100%;
+		height: var(--fild-h);
+		outline-width: 1px;
+		outline-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) - 30%));
+		outline-style: solid;
+	}
+
+	& textarea{
+		font-family: var(--font-family);
+		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+		border-radius: var(--rd);
+		width: 100%;
 		border: none;
-		height: inherit;
-		outline: none;
-		padding: 0 10px;
+		resize: vertical;
+		padding: var(--pd);
+		min-height: calc(var(--fild-h) * 2);
+		tab-size: 1.5rem;
+		outline-width: 1px;
+		outline-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) - 30%));
+		outline-style: solid;
+	}
+
+	& input[type="email"],
+	& input[type="password"],
+	& input[type="number"],
+	& input[type="text"],
+	& input[type="tel"]{
+		border: none;
+		padding: 0 var(--pd);
 		box-sizing: border-box;
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+	}
+
+	& input::placeholder,
+	& textarea::placeholder{
+		opacity: .5;
+		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+	}
+
+	& input:focus,
+	& textarea:focus{
+		outline-width: 2px;
+		outline-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+		outline-style: solid;
+	}
+
+	& input:invalid,
+	& textarea:invalid{
+		background-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) + 25%)) !important;
+		outline-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig)) !important;
+	}
+
+	& input:invalid:focus,
+	& textarea:invalid:focus {
+		outline-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig)) !important;
 	}
 
 	& i{
 		position: absolute;
 		right: 5px;
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+	}
+
+	& select{
+		border: none;
+		outline: none;
+		padding: 0 var(--pd);
+		box-sizing: border-box;
 	}
 }

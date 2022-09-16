@@ -7,10 +7,10 @@ button, .btn{
 	background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) + 10%));
 	color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 	border-radius: var(--rd) var(--rd) var(--rd) var(--rd);
-	font-size: calc(var(--font-size) - 2px);
+	font-size: 0.9rem;
 	min-width: 60px;
 	text-align: center;
-	height: calc(var(--fild-h) - (var(--border) * 2));
+	height: var(--fild-h);
 	padding: 0 var(--pd);
 	box-sizing: border-box;
 	cursor: pointer;
@@ -18,7 +18,7 @@ button, .btn{
 
 .btn-med{
 	font-size: calc(var(--font-size) * 1.15);
-	height: calc((var(--fild-h) - var(--border)) * 1.25);
+	height: calc((var(--fild-h) * 1.25));
 	padding: 0 calc(var(--pd) * 2);
 }
 

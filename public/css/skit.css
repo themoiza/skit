@@ -1,0 +1,154 @@
+:root {
+	--dark-hue: 0;
+	--dark-sat: 0%;
+	--dark-lig: 3%;
+	--light-hue: 0;
+	--light-sat: 0%;
+	--light-lig: 98%;
+	--pri-hue: 240;
+	--pri-sat: 48%;
+	--pri-lig: 36%;
+	--sec-hue: 160;
+	--sec-sat: 60%;
+	--sec-lig: 20%;
+	--danger-hue: 0;
+	--danger-sat: 58%;
+	--danger-lig: 39%;
+	--foreground-hue: var(--dark-hue);
+	--foreground-sat: var(--dark-sat);
+	--foreground-lig: var(--dark-lig);
+	--background-hue: var(--light-hue);
+	--background-sat: var(--light-sat);
+	--background-lig: var(--light-lig);
+
+	--font-family: monospace;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 14px;
+}
+
+body {
+	background-color: hsl(var(--background-hue), var(--background-sat), var(--background-lig));
+	color: hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig));
+	font-family: var(--font-family);
+	font-size: 1rem;
+}
+pre{
+	background-color: hsl(var(--background-hue), var(--background-sat), calc(var(--background-lig) + 2%));
+	box-sizing: border-box;
+	padding: var(--pd);
+}
+code{
+	tab-size: 2em;
+	font-size: 0.9rem;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: hsl(var(--foreground-hue), var(--foreground-sat), 50%) transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+*::-webkit-scrollbar-button {
+	background-color: hsl(var(--foreground-hue), var(--foreground-sat), 10%);
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: hsl(var(--foreground-hue), var(--foreground-sat), 20%);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: hsl(var(--foreground-hue), var(--foreground-sat), 50%);
+	border: none;
+	border-radius: 0;
+}
+
+*::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+*::-webkit-resizer {
+	background: transparent;
+}
+
+/* DARK MODE */
+.DarkMode {
+	--foreground-hue: var(--light-hue);
+	--foreground-sat: var(--light-sat);
+	--foreground-lig: var(--light-lig);
+	--background-hue: var(--dark-hue);
+	--background-sat: var(--dark-sat);
+	--background-lig: var(--dark-lig);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-hue: var(--light-hue);
+		--foreground-sat: var(--light-sat);
+		--foreground-lig: var(--light-lig);
+		--background-hue: var(--dark-hue);
+		--background-sat: var(--dark-sat);
+		--background-lig: var(--dark-lig);
+	}
+}
+.content {
+	padding: 2rem;
+	box-sizing: border-box;
+}
+
+.content .left {
+	width: 320px;
+}
+
+.content .right {
+	padding: 10px 0;
+	width: calc(100% - 320px);
+	font-size: 15px;
+	display: block;
+}
+
+.console {
+	padding: 20px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100vh;
+	overflow-y: auto;
+	max-height: calc(100vh - 160px);
+	background-color: hsl(var(--dark-hue), var(--dark-lig), var(--dark-sat));
+}
+
+.console-red {
+	color: hsl(var(--danger-hue), var(--danger-sat), calc(var(--danger-lig) + 10%));
+	padding: 2px 10px;
+}
+
+.console-green {
+	color: hsl(var(--sec-hue), var(--sec-sat), calc(var(--sec-lig) + 10%));
+	padding: 2px 10px;
+}
+
+.console-blue {
+	color: hsl(var(--pri-hue), var(--pri-sat), calc(var(--pri-lig) + 10%));
+	padding: 2px 10px;
+}
+
+.console-yellow {
+	color: hsl(60, var(--pri-sat), calc(var(--pri-lig) + 10%));
+	padding: 2px 10px;
+}
