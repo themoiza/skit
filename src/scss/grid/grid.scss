@@ -1,7 +1,7 @@
 .grid{
-	display: flex;
-	flex-wrap: wrap;
-    flex-direction: row;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 1.5rem;
 }
 .vcenter{
 	align-items: center;
@@ -15,40 +15,40 @@
 	width: auto;
 }
 .col-1{
-	width: 8.3333%;
+	grid-column: span 1;
 }
 .col-2{
-	width: 16.6666%;
+	grid-column: span 2;
 }
 .col-3{
-	width: 25%;
+	grid-column: span 3;
 }
 .col-4{
-	width: 33.3333%;
+	grid-column: span 4;
 }
 .col-5{
-	width: 41.6666%;
+	grid-column: span 5;
 }
 .col-6{
-	width: 50%;
+	grid-column: span 6;
 }
 .col-7{
-	width: 58.3333%;
+	grid-column: span 7;
 }
 .col-8{
-	width: 66.6666%;
+	grid-column: span 8;
 }
 .col-9{
-	width: 75%;
+	grid-column: span 9;
 }
 .col-10{
-	width: 83.3333%;
+	grid-column: span 10;
 }
 .col-11{
-	width: 91.6666%;
+	grid-column: span 11;
 }
 .col-11{
-	width: 100%;
+	grid-column: span 12;
 }
 
 @mixin calc(){

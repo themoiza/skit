@@ -1,27 +1,27 @@
 /*
 <input type="button">
 <input type="checkbox">
-<input type="color">
-<input type="date">
-<input type="datetime-local">
+<input type="color"> ✅
+<input type="date"> ✅
+<input type="datetime-local"> ✅
 <input type="email"> ✅
-<input type="file">
-<input type="hidden">
-<input type="image">
-<input type="month">
+<input type="file"> ✅
+
+<input type="image"> 
+<input type="month">✅
 <input type="number"> ✅
-<input type="password">
+<input type="password"> ✅
 <input type="radio">
-<input type="range">
+<input type="range"> ✅
 <input type="reset">
-<input type="search">
+<input type="search"> ✅
 <input type="submit">
 
 <input type="tel"> ✅
 <input type="text"> ✅
-<input type="time">
-<input type="url">
-<input type="week">
+<input type="time"> ✅
+<input type="url"> ✅
+<input type="week"> ✅
 */
 
 .field{
@@ -38,27 +38,40 @@
 		font-size: var(--font-size);
 	}
 
+	& input[type="color"],
+	& input[type="date"],
+	& input[type="datetime-local"],
+	& input[type="month"],
 	& input[type="email"],
+	& input[type="file"],
 	& input[type="password"],
+	& input[type="range"],
+	& input[type="search"],
+	& input[type="time"],
+	& input[type="url"],
+	& input[type="week"],
 	& input[type="number"],
 	& input[type="text"],
 	& input[type="tel"],
 	& select{
+		border: none;
+		padding: 0 var(--pd);
 		font-family: var(--font-family);
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 		border-radius: var(--rd);
 		width: 100%;
 		height: var(--fild-h);
+		min-width: 1rem;
 		outline-width: 1px;
-		outline-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) - 30%));
+		outline-color: hsl(var(--light-hue) var(--light-sat) calc(var(--foreground-lig) + 50%));
 		outline-style: solid;
 	}
 
 	& textarea{
 		font-family: var(--font-family);
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+		background-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) + 10%));
 		border-radius: var(--rd);
 		width: 100%;
 		border: none;
@@ -71,15 +84,43 @@
 		outline-style: solid;
 	}
 
-	& input[type="email"],
-	& input[type="password"],
-	& input[type="number"],
-	& input[type="text"],
-	& input[type="tel"]{
-		border: none;
-		padding: 0 var(--pd);
-		box-sizing: border-box;
-		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+	& input[type="color"]{
+
+		cursor: pointer;
+		padding: 0;
+		&::-webkit-color-swatch-wrapper{
+			padding: 0;
+		}
+		&::-webkit-color-swatch{
+			border: none;
+		}
+	}
+
+	& input[type="file"]{
+
+		position: relative;
+		line-height: var(--fild-h);
+
+		&::-webkit-file-upload-button,
+		&::file-selector-button{
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			border: none;
+			height: inherit;
+			width: inherit;
+			z-index: 1;
+		}
+	}
+
+	& input[type="number"]{
+		text-align: right;
+	}
+
+	& input[type="range"]{
+		outline: none;
+		padding: 0;
 	}
 
 	& input::placeholder,
@@ -89,10 +130,16 @@
 	}
 
 	& input:focus,
+	& select:focus,
 	& textarea:focus{
 		outline-width: 2px;
 		outline-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 		outline-style: solid;
+	}
+
+	& input[type="range"]:focus{
+		outline: none;
+		padding: 0;
 	}
 
 	& input:invalid,
@@ -110,12 +157,5 @@
 		position: absolute;
 		right: 5px;
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-	}
-
-	& select{
-		border: none;
-		outline: none;
-		padding: 0 var(--pd);
-		box-sizing: border-box;
 	}
 }
