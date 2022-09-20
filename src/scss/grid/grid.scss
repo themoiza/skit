@@ -1,173 +1,61 @@
 .grid{
 	display: grid;
-	grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(60, 1fr);
 	gap: 1.5rem;
 }
-.vcenter{
+.grid-vcenter{
 	align-items: center;
 }
-.col{
-	flex: 0 0 auto;
-	width: 100%;
+.grid-valign-bottom{
+	align-items: end;
 }
-.col-auto{
-	flex: 0 0 auto;
-	width: auto;
-}
-.col-1{
+.col-grid-1{
 	grid-column: span 1;
 }
-.col-2{
+.col-grid-2{
 	grid-column: span 2;
 }
-.col-3{
+.col-grid-3{
 	grid-column: span 3;
 }
-.col-4{
+.col-grid-4{
 	grid-column: span 4;
 }
-.col-5{
+.col-grid-5{
 	grid-column: span 5;
 }
-.col-6{
+.col-grid-6{
 	grid-column: span 6;
 }
-.col-7{
+.col-grid-7{
 	grid-column: span 7;
 }
-.col-8{
+.col-grid-8{
 	grid-column: span 8;
 }
-.col-9{
+.col-grid-9{
 	grid-column: span 9;
 }
-.col-10{
+.col-grid-10{
 	grid-column: span 10;
 }
-.col-11{
+.col-grid-11{
 	grid-column: span 11;
 }
-.col-11{
+.col-grid-11{
 	grid-column: span 12;
 }
 
-@mixin calc(){
-
-	$i: 5;
-	@while $i <= 1920 {
-
-		.col-#{$i}px {
-			width: #{$i}px !important;
-		}
-
-		.col-calc-#{$i} {
-			width: calc(100% - #{$i}px) !important;
-		}
-
-		$i: $i + 5;
-	}
-}
-
-@mixin widthP{
+@mixin colGrid(){
 
 	$i: 1;
-	$value: 1%;
+	@while $i <= 60 {
 
-	@while $i <= 100 {
-
-		.w#{$i}p{ 
-			width: $value; 
-		}
-
-		$value: $value + 1%;
-		$i: $i + 1;
-	}
-
-	.w12-5p{
-		width: 12.5%;
-	}
-
-	.w16-6p{
-		width: 16.66667%;
-	}
-
-	.w33-3p{
-		width: 33.33%;
-	}
-
-	.w66-6p{
-		width: 66.66%;
-	}
-}
-
-@mixin widthPX{
-
-	$i: 1;
-
-	@while $i <= 1000 {
-
-		.w#{$i}{ 
-			width: #{$i}px; 
+		.col-grid-#{$i} {
+			grid-column: span #{$i};
 		}
 		$i: $i + 1;
 	}
 }
 
-@mixin mgPd{
-
-	$i: 1;
-	@while $i <= 5 {
-
-		.mg#{$i}{ 
-			margin: #{$i * 10}px; 
-		}
-
-		.mgt#{$i}{ 
-			margin-top: #{$i * 10}px; 
-		}
-
-		.mgl#{$i}{ 
-			margin-left: #{$i * 10}px; 
-		}
-
-		.mgr#{$i}{ 
-			margin-right: #{$i * 10}px; 
-		}
-
-		.mgb#{$i}{ 
-			margin-bottom: #{$i * 10}px; 
-		}
-
-		.pd#{$i}{ 
-			padding: #{$i * 10}px;
-			box-sizing: border-box;
-		}
-
-		.pdt#{$i}{ 
-			padding-top: #{$i * 10}px;
-			box-sizing: border-box;
-		}
-
-		.pdl#{$i}{ 
-			padding-left: #{$i * 10}px;
-			box-sizing: border-box;
-		}
-
-		.pdr#{$i}{ 
-			padding-right: #{$i * 10}px;
-			box-sizing: border-box;
-		}
-
-		.pdb#{$i}{ 
-			padding-bottom: #{$i * 10}px;
-			box-sizing: border-box;
-		}
-
-		$i: $i + 1;
-	}
-}
-
-@include calc;
-@include widthP;
-@include widthPX;
-@include mgPd;
+@include colGrid;

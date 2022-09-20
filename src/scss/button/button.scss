@@ -8,17 +8,24 @@ button, .btn{
 	color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 	border-radius: var(--rd) var(--rd) var(--rd) var(--rd);
 	font-size: 0.9rem;
-	min-width: 60px;
+	min-width: 1.1rem;
+	width: auto;
 	text-align: center;
-	height: var(--fild-h);
+	height: var(--field-h);
 	padding: 0 var(--pd);
 	box-sizing: border-box;
+	vertical-align: middle;
 	cursor: pointer;
+
+	& i{
+		font-style: normal !important;
+		font-size: 1.5rem;
+	}
 }
 
 .btn-med{
 	font-size: calc(var(--font-size) * 1.15);
-	height: calc((var(--fild-h) * 1.25));
+	height: calc((var(--field-h) * 1.25));
 	padding: 0 calc(var(--pd) * 2);
 }
 
@@ -73,5 +80,23 @@ button, .btn{
 	&:active{
 		background-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) - 8%));
 		border-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) - 8%));
+	}
+}
+
+.btn-trans{
+	background-color: transparent;
+	border: none;
+	color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	&:hover{
+		background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) - 2%));
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	}
+	&:focus{
+		background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) - 5%));
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	}
+	&:active{
+		background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig) - 8%));
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 	}
 }

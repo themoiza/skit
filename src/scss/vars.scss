@@ -1,7 +1,7 @@
 :root{
     --border: 1px;
-    --pd: 1rem;
-    --rd: 2px;
+    --pd: calc(1rem / 2);
+    --rd: 3px;
     --font-size: 0.9rem;
-    --fild-h: 30px;
+    --field-h: calc(1rem * 2);
 }

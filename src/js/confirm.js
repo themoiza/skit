@@ -95,3 +95,26 @@ window.Confirm = function(obj){
 		});
 	}
 };
+
+
+window.Copy = (id) => {
+
+	var el = document.getElementById(id);
+
+	if(el){
+
+		var tx = document.createElement('textarea');
+		tx.textContent = el.textContent.replace(/\s+$/, '').replace(/^\s+/, '');
+		tx.focus();
+		tx.classList.add('hidden');
+		tx.style.width = '1px';
+		tx.style.height = '1px';
+		el.appendChild(tx);
+		tx.select();
+		document.execCommand('copy');
+	
+		window.setTimeout(() => {
+			tx.parentNode.removeChild(tx);
+		}, 10);
+	}
+};

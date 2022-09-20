@@ -10,120 +10,98 @@
 		<link rel="stylesheet" href="assets/skit-dist/skit.css">
 	</head>
 	<body>
-		<div class="content mgt2 mgb2">
-			<h1>Skit</h1>
-			<form>
-				<div class="grid pdt1 pdb1">
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT TEXT</label>
-							<input id="input1" type="text" name="" value="" placeholder="input[text]" />
-						</div>
-					</div>
-					<div class="col-2">
-						<div class="field w100p">
-							<label>INPUT COLOR</label>
-							<input id="input2" type="color" name="" value="#ffcc00" placeholder="input[color]" />
-						</div>
-					</div>
-					<div class="col-4">
-						<div class="field w100p">
-							<label>INPUT DATE</label>
-							<input id="input3" type="date" name="" value="" placeholder="input[date]" />
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT DATE LOCAL</label>
-							<input id="input11" type="datetime-local" name="" value="" placeholder="input[datetime-local]" />
+		<header class="header pd1">
+			<div class="grid grid-vcenter">
+				<div class="col-grid-52"><img class="skit" src="assets/skit.png" /></div>
+				<div class="col-grid-8 tx-right">
+					<div class="field">
+						<div class="toggle">
+							<input onchange="Darkmode(this.checked)" type="checkbox" name="" value="" checked="checked" />
 						</div>
 					</div>
 				</div>
-				<div class="grid pdt1 pdb1">
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT E-MAIL</label>
-							<input id="input4" type="email" name="" value="" placeholder="input[email]" />
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT MONTH</label>
-							<input id="input5" type="month" name="" value="2023-01" placeholder="2023-01" />
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT NUMBER</label>
-							<input id="input6" type="number" name="" value="" step="0.01" placeholder="0.01" />
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT FILE</label>
-							<input id="input61" type="file" name="" value="" step="0.01" placeholder="0.01" />
-						</div>
-					</div>
+			</div>
+		</header>
+		<div class="flex">
+			<div class="col-flex-220px">
+				<nav class="menu">
+					<div class="title">FORMS</div>
+					<div><a href="#menuCheckbox">Checkbox</a></div>
+					<div><a href="#menuInputColor">Color</a></div>
+					<div><a href="#menuInputDatalist">Datalist</a></div>
+					<div><a href="#menuInputDate">Date</a></div>
+					<div><a href="#menuInputDateLocal">Date Local</a></div>
+					<div><a href="#menuInputEmail">E-mail</a></div>
+					<div><a href="#menuInputFile">File</a></div>
+					<div><a href="#menuInputMonth">Month</a></div>
+					<div><a href="#menuInputNumber">Number</a></div>
+					<div><a href="#menuInputPassword">Password</a></div>
+					<div><a href="#menuInputRadio">Radio</a></div>
+					<div><a href="#menuInputRange">Range</a></div>
+					<div><a href="#menuInputSearch">Search</a></div>
+					<div><a href="#menuInputSelect">Select</a></div>
+					<div><a href="#menuInputTel">Tel</a></div>
+					<div><a href="#menuInputText">Text</a></div>
+					<div><a href="#menuInputTextarea">Textarea</a></div>
+					<div><a href="#menuInputTime">Time</a></div>
+					<div><a href="#menuInputUrl">Url</a></div>
+					<div><a href="#menuInputWeek">Week</a></div>
+					<div class="title">COMPONENTS</div>
+					<div><a href="#menuCompToggle">Toggle</a></div>
+				</nav>
+			</div>
+			<div class="col-flex-calc-220 pd2">
+				<div class="mgt4 mgb4 pdt2 pdb2">
+					<h1>Skit</h1>
+					<p>The Simple but powerfull front-end kit for web sofware development.</p>
 				</div>
-				<div class="grid pdt1 pdb1">
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT TEL</label>
-							<input type="tel" name="" value="" placeholder="input[tel]" />
+				<hr />
+				<div class="flex">
+					<div class="col-flex-280px pdt2 pdb2" id="menuCheckbox">
+						<div class="field">
+							<input type="checkbox" id="checkbox1" name="" value="" checked="checked" /><label for="checkbox1">Check 1</label>
+						</div>
+						<div class="field">
+							<input type="checkbox" id="checkbox2" name="" value="" /><label for="checkbox2">Check 2</label>
+						</div>
+						<div class="field">
+							<input type="checkbox" id="checkbox3" name="" value="" disabled="disabled" /><label for="checkbox3">disabled</label>
 						</div>
 					</div>
-					<div class="col-3">
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="checkboxSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;input&nbsp;type=&quot;checkbox&quot;&nbsp;id=&quot;checkbox1&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;checkbox1&quot;&gt;Check&nbsp;1&lt;/label&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;input&nbsp;type=&quot;checkbox&quot;&nbsp;id=&quot;checkbox2&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;checkbox2&quot;&gt;Check&nbsp;2&lt;/label&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;input&nbsp;type=&quot;checkbox&quot;&nbsp;id=&quot;checkbox3&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;checkbox3&quot;&gt;disabled&lt;/label&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('checkboxSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputColor">
 						<div class="field w100p">
-							<label>INPUT PASSWORD</label>
-							<input type="password" name="" value="" placeholder="input[password]" />
+							<label class="label">COLOR</label>
+							<input type="color" name="" value="#777777" />
 						</div>
 					</div>
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT SEARCH</label>
-							<input type="search" name="" value="" placeholder="input[search]" />
-						</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="colorSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;COLOR&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;color&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;#777777&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('colorSource')" class="btn btn-pri">copy</button>
+						</p>
 					</div>
-					<div class="col-3">
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputDatalist">
 						<div class="field w100p">
-							<label>INPUT RANGE</label>
-							<input type="range" name="" step="1" min="0" max="100" value="0" placeholder="input[range]" />
-						</div>
-					</div>
-				</div>
-				<div class="grid pdt1 pdb1">
-					<div class="col-3">
-						<div class="field w100p">
-							<label>SELECT</label>
-							<select name="">
-								<option value="1">1</option>
-								<option value="2">2</option>
-							</select>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT TIME</label>
-							<input type="time" name="" value="" placeholder="input[time]" />
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT URL</label>
-							<input type="url" name="" value="" placeholder="input[url]" />
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="field w100p">
-							<label>INPUT WEEK</label>
-							<input id="input7" type="week" name="" value="2023-W01" placeholder="input[week]" />
-						</div>
-					</div>
-				</div>
-				<div class="grid pdt1 pdb1">
-					<div class="col-3">
-						<div class="field w100p">
-							<label>DATALIST</label>
+							<label class="label">DATALIST</label>
 							<input type="text" list="browsers" name="browser" placeholder="datalist">
 							<datalist id="browsers">
 								<option value="Internet Explorer">
@@ -134,14 +112,362 @@
 							</datalist>
 						</div>
 					</div>
-					<div class="col-9">
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="datalistSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;DATALIST&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;text&quot;&nbsp;list=&quot;browsers&quot;&nbsp;name=&quot;browser&quot;&nbsp;/&gt;
+	&lt;datalist&nbsp;id=&quot;browsers&quot;&gt;
+		&lt;option&nbsp;value=&quot;Internet&nbsp;Explorer&quot;&gt;
+		&lt;option&nbsp;value=&quot;Firefox&quot;&gt;
+		&lt;option&nbsp;value=&quot;Chrome&quot;&gt;
+		&lt;option&nbsp;value=&quot;Opera&quot;&gt;
+		&lt;option&nbsp;value=&quot;Safari&quot;&gt;
+	&lt;/datalist&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('datalistSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputDate">
 						<div class="field w100p">
-							<label>TEXTAREA</label>
-							<textarea name="browser" placeholder="textarea"></textarea>
+							<label class="label">DATE</label>
+							<input type="date" name="" value="" />
 						</div>
 					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="dateSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;DATE&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;date&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('dateSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputDateLocal">
+						<div class="field w100p">
+							<label class="label">DATE LOCAL</label>
+							<input type="datetime-local" name="" value="" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="datelocalSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;DATE&nbsp;LOCAL&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;datetime&#45;local&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('datelocalSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputEmail">
+						<div class="field w100p">
+							<label class="label">E-MAIL</label>
+							<input type="email" name="" value="" placeholder="e-mail" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="emailSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;E&#45;MAIL&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;email&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;e&#45;mail&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('emailSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputFile">
+						<div class="field w100p">
+							<label class="label">FILE</label>
+							<input type="file" name="" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="fileSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;FILE&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;file&quot;&nbsp;name=&quot;&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('fileSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputMonth">
+						<div class="field w100p">
+							<label class="label">MONTH</label>
+							<input type="month" name="" value="" placeholder="2023-01" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="monthSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;MONTH&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;month&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;2023&#45;01&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('monthSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputNumber">
+						<div class="field w100p">
+							<label class="label">NUMBER</label>
+							<input type="number" name="" value="" step="0.01" placeholder="0.01" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="numberSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;NUMBER&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;number&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;step=&quot;0.01&quot;&nbsp;placeholder=&quot;0.01&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('numberSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputPassword">
+						<div class="field w100p">
+							<label class="label">PASSWORD</label>
+							<input type="password" name="" value="" placeholder="password" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="passwordSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;PASSWORD&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;password&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;password&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('passwordSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputRadio">
+						<div class="field">
+							<input type="radio" id="radio1" name="radio1" /><label for="radio1">On</label>
+						</div>
+						<div class="field">
+							<input type="radio" id="radio2" name="radio1" /><label for="radio2">Off</label>
+						</div>
+						<div class="field">
+							<input type="radio" id="radio3" name="radio1" disabled="disabled" /><label for="radio3">disabled</label>
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="radioSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;input&nbsp;type=&quot;radio&quot;&nbsp;id=&quot;radio1&quot;&nbsp;name=&quot;radio1&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;radio1&quot;&gt;On&lt;/label&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;input&nbsp;type=&quot;radio&quot;&nbsp;id=&quot;radio2&quot;&nbsp;name=&quot;radio1&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;radio2&quot;&gt;Off&lt;/label&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;input&nbsp;type=&quot;radio&quot;&nbsp;id=&quot;radio3&quot;&nbsp;name=&quot;radio1&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;radio3&quot;&gt;disabled&lt;/label&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('radioSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputRange">
+						<div class="field w100p">
+							<label class="label">RANGE</label>
+							<input type="range" name="" step="1" min="0" max="100" value="50" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="rangeSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;RANGE&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;range&quot;&nbsp;name=&quot;&quot;&nbsp;step=&quot;1&quot;&nbsp;min=&quot;0&quot;&nbsp;max=&quot;100&quot;&nbsp;value=&quot;50&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('rangeSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputSearch">
+						<div class="field w100p">
+							<label class="label">SEARCH</label>
+							<input type="search" name="" value="" placeholder="search" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="searchSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;SEARCH&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;search&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;search&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('searchSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputSelect">
+						<div class="field w100p">
+							<label class="label">SELECT</label>
+							<select name="">
+								<option value="1">1</option>
+								<option value="2">2</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="selectSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;SELECT&lt;/label&gt;
+	&lt;select&nbsp;name=&quot;&quot;&gt;
+		&lt;option&nbsp;value=&quot;1&quot;&gt;1&lt;/option&gt;
+		&lt;option&nbsp;value=&quot;2&quot;&gt;2&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('selectSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputTel">
+						<div class="field w100p">
+							<label class="label">TEL</label>
+							<input type="tel" name="" value="" placeholder="tel" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="telSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;TEL&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;tel&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;tel&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('telSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputText">
+						<div class="field w100p">
+							<label class="label">TEXT</label>
+							<input type="text" name="" value="" placeholder="text" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="textSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;TEXT&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('textSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputTextarea">
+						<div class="field w100p">
+							<label class="label">TEXTAREA</label>
+							<textarea name="" placeholder="textarea"></textarea>
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="textareaSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;TEXTAREA&lt;/label&gt;
+	&lt;textarea&nbsp;name=&quot;&quot;&nbsp;placeholder=&quot;textarea&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('textareaSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputTime">
+						<div class="field w100p">
+							<label class="label">TIME</label>
+							<input type="time" name="" value="" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="timeSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;TIME&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;time&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('timeSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputUrl">
+						<div class="field w100p">
+							<label class="label">URL</label>
+							<input type="url" name="" value="" placeholder="url" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="urlSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;URL&lt;/label&gt;
+	&lt;input&nbsp;type=&quot;url&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;url&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('urlSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+
+					<div class="col-flex-280px pdt2 pdb2" id="menuInputWeek">
+						<div class="field w100p">
+							<label class="label">WEEK</label>
+							<input id="input7" type="week" name="" value="2023-W01" />
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="weekSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;label&nbsp;class=&quot;label&quot;&gt;WEEK&lt;/label&gt;
+	&lt;input&nbsp;id=&quot;input7&quot;&nbsp;type=&quot;week&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;2023&#45;W01&quot;&nbsp;/&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('weekSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuCompToggle">
+						<div class="field">
+							<div class="toggle">
+								<input onchange="Darkmode(this.checked)" id="toggle1" type="checkbox" name="" value="" />
+								<label for="toggle1">Dark mode</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="toggleSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
+	&lt;div&nbsp;class=&quot;toggle&quot;&gt;
+		&lt;input&nbsp;id=&quot;toggle1&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
+		&lt;label&nbsp;for=&quot;toggle1&quot;&gt;Dark&nbsp;mode&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Copy('toggleSource')" class="btn btn-pri">copy</button>
+						</p>
+					</div>
 				</div>
-			</form>
+			</div>
 		</div>
+		<script src="assets/skit-dist/skit.js"></script>
+		<script>
+			window.Darkmode = (t) => {
+
+				if(t){
+					document.body.classList.add('DarkMode');
+					document.body.classList.remove('LightMode');
+				}else{
+					document.body.classList.remove('DarkMode');
+					document.body.classList.add('LightMode');
+				}
+			};
+		</script>
 	</body>
 </html>

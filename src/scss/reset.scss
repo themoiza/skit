@@ -4,6 +4,10 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+::selection {
+    background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+    color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+}
 body{
 	background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 }
@@ -25,12 +29,4 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
-}
-
-input{
-	accent-color: hsl(var(--light-hue) var(--light-sat) 90%);
-}
-input[type="radio"],
-input[type="checkbox"]{
-    transform: scale(1.2);
 }
