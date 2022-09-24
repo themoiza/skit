@@ -17,6 +17,7 @@
 		background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 		color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 		height: var(--field-h);
+		font-size: 0.8rem;
 
 		&:hover{
 			background-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 3%));

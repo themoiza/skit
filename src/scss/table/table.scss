@@ -13,10 +13,11 @@
 		background-color: hsl(var(--dark-hue) var(--dark-sat) calc(var(--dark-lig) - 1%));
 		color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 		width: 100%;
-		padding: 20px 0px;
+		padding: 1.5rem 0;
 		box-sizing: border-box;
 		text-transform: uppercase;
 		font-weight: bold;
+		font-size: 0.9rem;
 	}
 }
 table{
@@ -30,8 +31,9 @@ table{
 		background-color: hsl(var(--dark-hue) var(--dark-sat) calc(var(--dark-lig) - 1%));
 		color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 		& th{
-			padding: 10px 10px;
+			padding: .5rem 0.75rem;
 			font-weight: bold;
+			font-size: 0.9rem;
 		}
 	}
 
@@ -47,7 +49,8 @@ table{
 
 		& td{
 			color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
-			padding: 5px 10px;
+			padding: .5rem 0.75rem;
+			font-size: 0.9rem;
 		}
 	}
 }

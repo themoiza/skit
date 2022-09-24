@@ -9,7 +9,7 @@
     color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 }
 body{
-	background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+	background-color: hsl(var(--background-hue), var(--background-sat), calc(var(--background-lig) - 3%));
 }
 
 .hidden {

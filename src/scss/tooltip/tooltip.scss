@@ -1,0 +1,65 @@
+/* TOOLTIP */
+.tooltip{
+	display: block;
+	position: fixed;
+	pointer-events: none;
+	user-select: none;
+	color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+	background-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	max-width: 20rem;
+	padding: 0.5rem 0.75rem;
+	font-size: 0.85rem;
+	transform: scale(0.01);
+	opacity: 0;
+	box-sizing: border-box;
+	border-radius: var(--rd);
+	transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+.tooltip::after{
+	--triangle-size: 0.75rem;
+	content: "";
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	z-index: 5;
+	transform: translate(calc(var(--triangle-size) * -1), calc(var(--triangle-size) - 1px));
+	border-style: solid;
+	border-width: var(--triangle-size) var(--triangle-size) 0 var(--triangle-size);
+	border-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig)) transparent transparent transparent;
+}
+.tooltip-top::after{
+	left: 50%;
+	bottom: 0;
+	transform: translate(calc(var(--triangle-size) * -1), calc(var(--triangle-size) - 1px));
+	border-width: var(--triangle-size) var(--triangle-size) 0 var(--triangle-size);
+	border-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig)) transparent transparent transparent;
+}
+.tooltip-bottom::after{
+	left: 50%;
+	top: 0;
+	transform: translate(calc(var(--triangle-size) * -1), calc(var(--triangle-size) * -1));
+	border-width: 0 var(--triangle-size) var(--triangle-size) var(--triangle-size);
+	border-color: transparent transparent hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig)) transparent;
+}
+.tooltip-left::after{
+	right: 0;
+	top: 50%;
+	transform: translate(calc(var(--triangle-size) * 1), calc(var(--triangle-size) * -1));
+	border-width: var(--triangle-size) 0 var(--triangle-size) var(--triangle-size);
+	border-color: transparent transparent transparent hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+}
+.tooltip-right::after{
+	left: 0;
+	top: 50%;
+	transform: translate(calc(var(--triangle-size) * -1), calc(var(--triangle-size) * -1));
+	border-width: var(--triangle-size) var(--triangle-size) var(--triangle-size) 0;
+	border-color: transparent hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig)) transparent transparent;
+}
+
+.tooltip-active{
+	transform: scale(1);
+	z-index: 5;
+	opacity: 1;
+	transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}

@@ -60,8 +60,8 @@
 		outline-style: solid;
 	}
 
-	input[type=radio],
-	input[type=checkbox]{
+	& input[type=radio],
+	& input[type=checkbox]{
 		appearance: none;
 		cursor: pointer;
 		border: none;
@@ -71,8 +71,8 @@
 		position: relative;
 	}
 
-	input[type=radio]::before,
-	input[type=checkbox]::before{
+	& input[type=radio]::before,
+	& input[type=checkbox]::before{
 		color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 		position: absolute;
 		top: 0;
@@ -82,30 +82,24 @@
 		font-size: var(--field-h);
 	}
 
-	input[type=radio]::before{
+	& input[type=radio]::before{
 		content: "○"; /*○●*/
 	}
 
-	input[type=checkbox]::before{
+	& input[type=checkbox]::before{
 		content: "□"; /*□▣*/
 	}
 
-	input[type=radio]:checked:before{
+	& input[type=radio]:checked:before{
 		content: "●";
 	}
 
-	input[type=checkbox]:checked::before{
+	& input[type=checkbox]:checked::before{
 		content: "▣";
 	}
 
-	input[type=radio]:disabled,
-	input[type=checkbox]:disabled{
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
-
-	input[type=radio] + label,
-	input[type=checkbox] + label{
+	& input[type=radio] + label,
+	& input[type=checkbox] + label{
 		display: inline-block;
 		vertical-align: middle;
 		font-weight: bold;
@@ -119,12 +113,6 @@
 		-moz-user-select: none;
 		-ms-user-select: none;
 		-o-user-select: none;
-	}
-
-	input[type=radio]:disabled + label,
-	input[type=checkbox]:disabled + label{
-		opacity: 0.5;
-		cursor: not-allowed;
 	}
 
 	& input[type=color]{
@@ -266,6 +254,32 @@
 		border-radius: calc(var(--field-h) / 1.5);
 		background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 	}
+
+	& input[type=color]:disabled,
+	& input[type=date]:disabled,
+	& input[type=datetime-local]:disabled,
+	& input[type=month]:disabled,
+	& input[type=email]:disabled,
+	& input[type=file]:disabled,
+	& input[type=password]:disabled,
+	& input[type=search]:disabled,
+	& input[type=time]:disabled,
+	& input[type=url]:disabled,
+	& input[type=week]:disabled,
+	& input[type=number]:disabled,
+	& input[type=text]:disabled,
+	& input[type=tel]:disabled,
+	& select:disabled,
+	& textarea:disabled,
+	& input[type=radio]:disabled,
+	& input[type=checkbox]:disabled,
+	& input[type=range]:disabled,
+	& input[type=radio]:disabled + label,
+	& input[type=checkbox]:disabled + label{
+		opacity: 0.5;
+		cursor: not-allowed;
+		filter: grayscale(0.5);
+	}
 }
 
 .toggle{
@@ -321,4 +335,10 @@
 	& input[type=checkbox] + label{
 		margin-left: 3rem;
 	}
+}
+
+.disabled .label{
+	opacity: 0.5;
+	cursor: not-allowed;
+	filter: grayscale(0.5);
 }

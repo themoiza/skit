@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>SKIT</title>
-		<meta name="description" content="Conversor">
+		<meta name="description" content="SKIT is an advanced front-end for web software development. Simple because it has as few dependencies as possible.">
 		<link rel="stylesheet" href="css/skit.css">
 		<link rel="stylesheet" href="assets/skit-dist/skit.css">
 	</head>
 	<body>
 		<header class="header pd1">
 			<div class="grid grid-vcenter">
-				<div class="col-grid-52"><img class="skit" src="assets/skit.png" /></div>
+				<div class="col-grid-8"><img alt="skit" class="skit" src="assets/skit.png" /></div>
+				<div class="col-grid-44"><a href="/">get started</a> <a href="/examples.html">examples</a></div>
 				<div class="col-grid-8 tx-right">
 					<div class="field">
 						<div class="toggle">
-							<input onchange="Darkmode(this.checked)" type="checkbox" name="" value="" checked="checked" />
+							<input type="checkbox" onchange="Darkmode(this.checked)" aria-label="Toggle Dark Mode" checked="checked" />
 						</div>
 					</div>
 				</div>
@@ -25,35 +26,52 @@
 		<div class="flex">
 			<div class="col-flex-220px">
 				<nav class="menu">
-					<div class="title">FORMS</div>
-					<div><a href="#menuCheckbox">Checkbox</a></div>
-					<div><a href="#menuInputColor">Color</a></div>
-					<div><a href="#menuInputDatalist">Datalist</a></div>
-					<div><a href="#menuInputDate">Date</a></div>
-					<div><a href="#menuInputDateLocal">Date Local</a></div>
-					<div><a href="#menuInputEmail">E-mail</a></div>
-					<div><a href="#menuInputFile">File</a></div>
-					<div><a href="#menuInputMonth">Month</a></div>
-					<div><a href="#menuInputNumber">Number</a></div>
-					<div><a href="#menuInputPassword">Password</a></div>
-					<div><a href="#menuInputRadio">Radio</a></div>
-					<div><a href="#menuInputRange">Range</a></div>
-					<div><a href="#menuInputSearch">Search</a></div>
-					<div><a href="#menuInputSelect">Select</a></div>
-					<div><a href="#menuInputTel">Tel</a></div>
-					<div><a href="#menuInputText">Text</a></div>
-					<div><a href="#menuInputTextarea">Textarea</a></div>
-					<div><a href="#menuInputTime">Time</a></div>
-					<div><a href="#menuInputUrl">Url</a></div>
-					<div><a href="#menuInputWeek">Week</a></div>
-					<div class="title">COMPONENTS</div>
-					<div><a href="#menuCompToggle">Toggle</a></div>
+					<button onclick="submenu1.classList.toggle('active')" class="title">FORMS</button>
+					<div id="submenu1" class="submenu active">
+						<div><a href="/#menuCheckbox">Checkbox</a></div>
+						<div><a href="/#menuInputColor">Color</a></div>
+						<div><a href="/#menuInputDatalist">Datalist</a></div>
+						<div><a href="/#menuInputDate">Date</a></div>
+						<div><a href="/#menuInputDateLocal">Date Local</a></div>
+						<div><a href="/#menuInputEmail">E-mail</a></div>
+						<div><a href="/#menuInputFile">File</a></div>
+						<div><a href="/#menuInputMonth">Month</a></div>
+						<div><a href="/#menuInputNumber">Number</a></div>
+						<div><a href="/#menuInputPassword">Password</a></div>
+						<div><a href="/#menuInputRadio">Radio</a></div>
+						<div><a href="/#menuInputRange">Range</a></div>
+						<div><a href="/#menuInputSearch">Search</a></div>
+						<div><a href="/#menuInputSelect">Select</a></div>
+						<div><a href="/#menuInputTel">Tel</a></div>
+						<div><a href="/#menuInputText">Text</a></div>
+						<div><a href="/#menuInputTextarea">Textarea</a></div>
+						<div><a href="/#menuInputTime">Time</a></div>
+						<div><a href="/#menuInputUrl">Url</a></div>
+						<div><a href="/#menuInputWeek">Week</a></div>
+					</div>
+					<button onclick="submenu2.classList.toggle('active')" class="title">NOT STANDARD</button>
+					<div id="submenu2" class="submenu">
+						<div><a href="/#menuCompToggle">Toggle</a></div>
+					</div>
+					<button onclick="submenu3.classList.toggle('active')" class="title">JS COMPONENTS</button>
+					<div id="submenu3" class="submenu">
+						<div><a href="/#menuJsCopy">Copy</a></div>
+						<div><a href="/#menuJsTooltip">Tooltip</a></div>
+					</div>
 				</nav>
 			</div>
 			<div class="col-flex-calc-220 pd2">
 				<div class="mgt4 mgb4 pdt2 pdb2">
 					<h1>Skit</h1>
-					<p>The Simple but powerfull front-end kit for web sofware development.</p>
+					<p>SKIT is an advanced front-end for web software development. Simple because it has as few dependencies as possible.</p>
+					<h2>Methodology</h2>
+					<ul>
+						<li>HSL color</li>
+						<li>Rem sized</li>
+						<li>More vanilla possible</li>
+						<li>Low dependencies</li>
+						<li>Compatible with other frameworks</li>
+					</ul>
 				</div>
 				<hr />
 				<div class="flex">
@@ -79,15 +97,18 @@
 	&lt;input&nbsp;type=&quot;checkbox&quot;&nbsp;id=&quot;checkbox3&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;checkbox3&quot;&gt;disabled&lt;/label&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('checkboxSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('checkboxSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputColor">
 						<div class="field w100p">
-							<label class="label">COLOR</label>
-							<input type="color" name="" value="#777777" />
+							<label for="input0" class="label">COLOR</label>
+							<input id="input0" type="color" name="" value="#777777" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input0')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="colorSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -95,14 +116,14 @@
 	&lt;input&nbsp;type=&quot;color&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;#777777&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('colorSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('colorSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputDatalist">
 						<div class="field w100p">
-							<label class="label">DATALIST</label>
-							<input type="text" list="browsers" name="browser" placeholder="datalist">
+							<label for="input1" class="label">DATALIST</label>
+							<input id="input1" type="text" list="browsers" name="browser" placeholder="datalist" />
 							<datalist id="browsers">
 								<option value="Internet Explorer">
 								<option value="Firefox">
@@ -111,6 +132,9 @@
 								<option value="Safari">
 							</datalist>
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input1')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="datalistSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -125,15 +149,18 @@
 	&lt;/datalist&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('datalistSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('datalistSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputDate">
 						<div class="field w100p">
-							<label class="label">DATE</label>
-							<input type="date" name="" value="" />
+							<label for="input2" class="label">DATE</label>
+							<input id="input2" type="date" name="" value="" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input2')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="dateSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -141,15 +168,18 @@
 	&lt;input&nbsp;type=&quot;date&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('dateSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('dateSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputDateLocal">
 						<div class="field w100p">
-							<label class="label">DATE LOCAL</label>
-							<input type="datetime-local" name="" value="" />
+							<label for="input3" class="label">DATE LOCAL</label>
+							<input id="input3" type="datetime-local" name="" value="" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input3')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="datelocalSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -157,15 +187,18 @@
 	&lt;input&nbsp;type=&quot;datetime&#45;local&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('datelocalSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('datelocalSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputEmail">
 						<div class="field w100p">
-							<label class="label">E-MAIL</label>
-							<input type="email" name="" value="" placeholder="e-mail" />
+							<label for="input4" class="label">E-MAIL</label>
+							<input id="input4" type="email" name="" value="" placeholder="e-mail" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input4')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="emailSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -173,15 +206,18 @@
 	&lt;input&nbsp;type=&quot;email&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;e&#45;mail&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('emailSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('emailSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputFile">
 						<div class="field w100p">
-							<label class="label">FILE</label>
-							<input type="file" name="" />
+							<label for="input5" class="label">FILE</label>
+							<input id="input5" type="file" name="" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input5')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="fileSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -189,7 +225,7 @@
 	&lt;input&nbsp;type=&quot;file&quot;&nbsp;name=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('fileSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('fileSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 
@@ -197,9 +233,12 @@
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputMonth">
 						<div class="field w100p">
-							<label class="label">MONTH</label>
-							<input type="month" name="" value="" placeholder="2023-01" />
+							<label for="input6" class="label">MONTH</label>
+							<input id="input6" type="month" name="" value="" placeholder="2023-01" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input6')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="monthSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -207,7 +246,7 @@
 	&lt;input&nbsp;type=&quot;month&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;2023&#45;01&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('monthSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('monthSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 
@@ -215,9 +254,12 @@
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputNumber">
 						<div class="field w100p">
-							<label class="label">NUMBER</label>
-							<input type="number" name="" value="" step="0.01" placeholder="0.01" />
+							<label for="input7" class="label">NUMBER</label>
+							<input id="input7" type="number" name="" value="" step="0.01" placeholder="0.01" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input7')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="numberSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -225,7 +267,7 @@
 	&lt;input&nbsp;type=&quot;number&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;step=&quot;0.01&quot;&nbsp;placeholder=&quot;0.01&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('numberSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('numberSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 
@@ -233,9 +275,12 @@
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputPassword">
 						<div class="field w100p">
-							<label class="label">PASSWORD</label>
-							<input type="password" name="" value="" placeholder="password" />
+							<label for="input8" class="label">PASSWORD</label>
+							<input id="input8" type="password" name="" value="" placeholder="password" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input8')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="passwordSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -243,7 +288,7 @@
 	&lt;input&nbsp;type=&quot;password&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;password&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('passwordSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('passwordSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -269,7 +314,7 @@
 	&lt;input&nbsp;type=&quot;radio&quot;&nbsp;id=&quot;radio3&quot;&nbsp;name=&quot;radio1&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;radio3&quot;&gt;disabled&lt;/label&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('radioSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('radioSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 
@@ -277,9 +322,12 @@
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputRange">
 						<div class="field w100p">
-							<label class="label">RANGE</label>
-							<input type="range" name="" step="1" min="0" max="100" value="50" />
+							<label for="input9" class="label">RANGE</label>
+							<input id="input9" type="range" name="" step="1" min="0" max="100" value="50" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input9')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="rangeSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -287,7 +335,7 @@
 	&lt;input&nbsp;type=&quot;range&quot;&nbsp;name=&quot;&quot;&nbsp;step=&quot;1&quot;&nbsp;min=&quot;0&quot;&nbsp;max=&quot;100&quot;&nbsp;value=&quot;50&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('rangeSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('rangeSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 
@@ -295,9 +343,12 @@
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputSearch">
 						<div class="field w100p">
-							<label class="label">SEARCH</label>
-							<input type="search" name="" value="" placeholder="search" />
+							<label for="input10" class="label">SEARCH</label>
+							<input id="input10" type="search" name="" value="" placeholder="search" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input10')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="searchSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -305,7 +356,7 @@
 	&lt;input&nbsp;type=&quot;search&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;search&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('searchSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('searchSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 
@@ -313,12 +364,15 @@
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputSelect">
 						<div class="field w100p">
-							<label class="label">SELECT</label>
-							<select name="">
+							<label for="select1" class="label">SELECT</label>
+							<select id="select1" name="">
 								<option value="1">1</option>
 								<option value="2">2</option>
 							</select>
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('select1')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="selectSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -329,15 +383,18 @@
 	&lt;/select&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('selectSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('selectSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputTel">
 						<div class="field w100p">
-							<label class="label">TEL</label>
-							<input type="tel" name="" value="" placeholder="tel" />
+							<label for="input11" class="label">TEL</label>
+							<input id="input11" type="tel" name="" value="" placeholder="tel" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input11')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="telSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -345,16 +402,19 @@
 	&lt;input&nbsp;type=&quot;tel&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;tel&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('telSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('telSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputText">
 						<div class="field w100p">
-							<label class="label">TEXT</label>
-							<input type="text" name="" value="" placeholder="text" />
+							<label for="input12" class="label">TEXT</label>
+							<input id="input12" type="text" name="" value="" placeholder="text" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input12')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="textSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -362,16 +422,19 @@
 	&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('textSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('textSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputTextarea">
 						<div class="field w100p">
-							<label class="label">TEXTAREA</label>
-							<textarea name="" placeholder="textarea"></textarea>
+							<label for="input13" class="label">TEXTAREA</label>
+							<textarea id="input13" name="" placeholder="textarea"></textarea>
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input13')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="textareaSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -379,16 +442,19 @@
 	&lt;textarea&nbsp;name=&quot;&quot;&nbsp;placeholder=&quot;textarea&quot;&gt;&lt;/textarea&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('textareaSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('textareaSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputTime">
 						<div class="field w100p">
-							<label class="label">TIME</label>
-							<input type="time" name="" value="" />
+							<label for="input14" class="label">TIME</label>
+							<input id="input14" type="time" name="" value="" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input14')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="timeSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -396,16 +462,19 @@
 	&lt;input&nbsp;type=&quot;time&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('timeSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('timeSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputUrl">
 						<div class="field w100p">
-							<label class="label">URL</label>
-							<input type="url" name="" value="" placeholder="url" />
+							<label for="input15" class="label">URL</label>
+							<input id="input15" type="url" name="" value="" placeholder="url" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input15')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="urlSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
@@ -413,28 +482,35 @@
 	&lt;input&nbsp;type=&quot;url&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;url&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('urlSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('urlSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
 
 					<div class="col-flex-280px pdt2 pdb2" id="menuInputWeek">
 						<div class="field w100p">
-							<label class="label">WEEK</label>
-							<input id="input7" type="week" name="" value="2023-W01" />
+							<label for="input16" class="label">WEEK</label>
+							<input id="input16" type="week" name="" value="2023-W01" />
 						</div>
+						<p>
+							<button onclick="ToogleDisabled('input16')" class="btn">toggle disabled</button>
+						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="weekSource">&lt;div&nbsp;class=&quot;field&quot;&gt;
 	&lt;label&nbsp;class=&quot;label&quot;&gt;WEEK&lt;/label&gt;
-	&lt;input&nbsp;id=&quot;input7&quot;&nbsp;type=&quot;week&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;2023&#45;W01&quot;&nbsp;/&gt;
+	&lt;input&nbsp;type=&quot;week&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;2023&#45;W01&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('weekSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('weekSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
-					<hr class="col-flex" />
+				</div>
+				<hr />
+				<h2>NOT STANDARD</h2>
+				<div class="flex">
 					<div class="col-flex-280px pdt2 pdb2" id="menuCompToggle">
+						<p class="mgb2"><b>Toggle</b></p>
 						<div class="field">
 							<div class="toggle">
 								<input onchange="Darkmode(this.checked)" id="toggle1" type="checkbox" name="" value="" />
@@ -450,13 +526,65 @@
 	&lt;/div&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Copy('toggleSource')" class="btn btn-pri">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('toggleSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+						</p>
+					</div>
+				</div>
+				<hr />
+				<h2>JS COMPONENTS</h2>
+				<div class="flex">
+					<div class="col-flex-280px pdt2 pdb2" id="menuJsCopy">
+						<p class="mgb2"><b>Copy to Clipboard</b></p>
+						<p id="copyId">Exorcizamus te, omnis immundus spiritus, omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio, omnis congregatio et secta diabolica... Ergo, draco maledicte et omnis legio diabolica, adjuramus te ... cessa decipere humanas creaturas, eisque æternæ perditionìs venenum propinare...</p>
+						<p>
+							<button onclick="Tooltip.update(this, 'copied');Copy('copyId')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+						</p>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="copySource">&lt;p&nbsp;id=&quot;id&quot;&gt;Text&lt;p&gt;
+&lt;button&nbsp;onclick=&quot;Copy(&#39;id&#39;)&quot;&gt;copy&lt;/button&gt;</pre>
+						<p>
+							<button onclick="Tooltip.update(this, 'copied');Copy('copySource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuJsTooltip">
+						<p class="mgb2"><b>ToolTip</b></p>
+						<div>
+							<button data-title="Tooltip 1" data-title-position="top">TOP</button> 
+							<button data-title="Tooltip 2" data-title-position="bottom">BOTTOM</button> 
+							<button data-title="Tooltip 3" data-title-position="left">LEFT</button> 
+							<button data-title="Tooltip 4" data-title-position="right">RIGHT</button> 
+							<button data-title-for="tip1">HTML</button>
+						</div>
+						<div class="tooltip" id="tip1">
+							Tooltip <b>HTML</b>
+							<p><img src="assets/skit.png" alt="skit" class="w100p" /></p>
+							Exorcizamus te, omnis immundus spiritus, omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio, omnis congregatio et secta diabolica... Ergo, draco maledicte et omnis legio diabolica, adjuramus te ... cessa decipere humanas creaturas, eisque æternæ perditionìs venenum propinare...
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+<pre id="tooltipSource">&lt;button&nbsp;data&#45;title=&quot;Tooltip&nbsp;1&quot;&nbsp;data&#45;title&#45;position=&quot;TOP&quot;&gt;TOP&lt;/button&gt;&nbsp;
+&lt;button&nbsp;data&#45;title=&quot;Tooltip&nbsp;2&quot;&nbsp;data&#45;title&#45;position=&quot;bottom&quot;&gt;BOTTOM&lt;/button&gt;&nbsp;
+&lt;button&nbsp;data&#45;title=&quot;Tooltip&nbsp;3&quot;&nbsp;data&#45;title&#45;position=&quot;left&quot;&gt;LEFT&lt;/button&gt;&nbsp;
+&lt;button&nbsp;data&#45;title=&quot;Tooltip&nbsp;4&quot;&nbsp;data&#45;title&#45;position=&quot;right&quot;&gt;RIGHT&lt;/button&gt;&nbsp;
+&lt;button&nbsp;data&#45;title&#45;for=&quot;tip1&quot;&gt;HTML&lt;/button&gt;
+&lt;div&nbsp;class=&quot;tooltip&quot;&nbsp;id=&quot;tip1&quot;&gt;
+	Tooltip&nbsp;&lt;b&gt;HTML&lt;/b&gt;
+	&lt;p&gt;&lt;img&nbsp;src=&quot;assets/skit.png&quot;&nbsp;alt=&quot;skit&quot;&nbsp;class=&quot;w100p&quot;&nbsp;/&gt;&lt;/p&gt;
+	Exorcizamus&nbsp;te,&nbsp;omnis&nbsp;immundus&nbsp;spiritus,&nbsp;omnis&nbsp;satanica&nbsp;potestas,&nbsp;omnis&nbsp;incursio&nbsp;infernalis&nbsp;adversarii,&nbsp;omnis&nbsp;legio,&nbsp;omnis&nbsp;congregatio&nbsp;et&nbsp;secta&nbsp;diabolica...&nbsp;Ergo,&nbsp;draco&nbsp;maledicte&nbsp;et&nbsp;omnis&nbsp;legio&nbsp;diabolica,&nbsp;adjuramus&nbsp;te&nbsp;...&nbsp;cessa&nbsp;decipere&nbsp;humanas&nbsp;creaturas,&nbsp;eisque&nbsp;æternæ&nbsp;perditionìs&nbsp;venenum&nbsp;propinare...
+&lt;/div&gt;</pre>
+						<p>
+							<button onclick="Tooltip.update(this, 'copied');Copy('tooltipSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<script src="assets/skit-dist/skit.js"></script>
+		<footer>
+			<p>Created on Republic of Rio Grande do Sul, 🇧🇷.</p>
+		</footer>
+		<script async src="assets/skit-dist/skit.js"></script>
 		<script>
 			window.Darkmode = (t) => {
 
@@ -466,6 +594,19 @@
 				}else{
 					document.body.classList.remove('DarkMode');
 					document.body.classList.add('LightMode');
+				}
+			};
+
+			window.ToogleDisabled = (id) => {
+
+				var f = document.getElementById(id);
+
+				if(f.getAttribute('disabled')){
+					f.removeAttribute('disabled', 'disabled');
+					f.parentElement.classList.remove('disabled');
+				}else{
+					f.setAttribute('disabled', 'disabled');
+					f.parentElement.classList.add('disabled');
 				}
 			};
 		</script>

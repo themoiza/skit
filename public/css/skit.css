@@ -95,10 +95,10 @@
 
 html {
 	font-size: 15px;
+	scroll-behavior: smooth;
 }
 
 body {
-	background-color: hsl(var(--background-hue), var(--background-sat), var(--background-lig));
 	color: hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig));
 	font-family: var(--font-family);
 	font-size: 1rem;
@@ -121,6 +121,18 @@ code{
 a{
 	text-decoration: none;
 	color: hsl(var(--foreground-hue), var(--foreground-sat), calc(var(--foreground-lig) + 2%));
+}
+p{
+	margin: 0.5rem 0;
+	font-size: 1rem;
+}
+h1{
+	margin: 1.75rem 0 1.25rem 0;
+	font-size: 1.75rem;
+}
+h2{
+	margin: 1.5rem 0 1rem 0;
+	font-size: 1.5rem;
 }
 hr{
 	height: 1px;
@@ -150,6 +162,13 @@ hr{
 	background-color: rgba(0,0,0,0.1);
 	display: block;
 	width: 100%;
+	position: fixed;
+	z-index: 9990;
+}
+.header a{
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 0.9rem;
 }
 
 .skit{
@@ -159,7 +178,11 @@ hr{
 
 .menu{
 	border-right: 1px solid rgba(0,0,0,0.1);
-	min-height: 100vh;
+	height: calc(100vh - 4rem);
+	top: 4rem;
+	position: fixed;
+	overflow-y: auto;
+	width: 220px;
 }
 
 .menu .title{
@@ -169,16 +192,41 @@ hr{
 	box-sizing: border-box;
 	font-weight: bold;
 	font-size: 1.1rem;
+	line-height: 1.1rem;
+	text-align: left;
+	background: transparent;
+	border: none;
+	outline: none;
 }
 
 .menu a{
 	display: block;
-	padding: 0.6rem 1rem;
+	padding: 0.5rem 1rem 0.5rem 2rem;
 	width: 100%;
 	box-sizing: border-box;
+	font-size: 0.85rem;
 }
 .menu a:hover{
 	background-color: rgba(0,0,0,0.05);
+}
+.submenu{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	height: 1px;
+}
+.active{
+	overflow: none;
+	height: auto;
+}
+
+footer{
+	display: block;
+	margin: 2rem;
+}
+footer p{
+	font-size: 0.7rem;
+	text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
