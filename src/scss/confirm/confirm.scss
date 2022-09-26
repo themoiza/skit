@@ -7,36 +7,37 @@
 	left: 0px;
 	right: 0px;
 	bottom: -1px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.75);
 
 	& .Confirm{
 		display: block;
 		color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
         background-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 		margin: auto;
-		width: calc(100vw - 60px);
-		max-width: 480px;
+		width: calc(100vw - 4rem);
+		max-width: 30rem;
 		margin-top: 40vh;
 		box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.3);
-		border-radius: 4px;
-		padding: 40px 20px;
+		border-radius: var(--rd);
+		padding: calc(var(--pd) * 3) calc(var(--pd) * 2);
 
 		& .Confirm-title{
-			font-size: calc(var(--font-size) * 1.5);
-			margin-bottom: 20px;
+			font-size: calc(var(--font-size) * 1.2);
+			margin: 0.5rem 0;
 			font-weight: 600;
-			line-height: 34px;
+			line-height: 1.5rem;
 			text-align: center;
 		}
 		& .Confirm-message{
 			font-size: var(--font-size);
-			margin-bottom: 20px;
-			font-weight: 300;
+			margin: 0.5rem 0;
+			font-weight: lighter;
 			line-height: 20px;
 			text-align: center;
 		}
 		& .Confirm-actions{
 			text-align: center;
+			margin-top: 2rem;
 		}
 	}
 }

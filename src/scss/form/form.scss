@@ -98,6 +98,10 @@
 		content: "▣";
 	}
 
+	& input[type=checkbox]:indeterminate::before{
+		content: "⊟";
+	}
+
 	& input[type=radio] + label,
 	& input[type=checkbox] + label{
 		display: inline-block;

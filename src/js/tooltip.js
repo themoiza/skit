@@ -14,14 +14,14 @@ window.Tooltip = {
 
 			if(typeof(e.target.getAttribute('data-title-for')) !== 'string'){
 
-				var randomID = 'tip'+(Math.random()*1000000).toFixed(0);
+				var randomId = 'tip'+(Math.random()*1000000).toFixed(0);
 
 				var div = document.createElement('div');
 				div.classList.add('tooltip');
-				div.setAttribute('id', randomID);
+				div.setAttribute('id', randomId);
 				div.textContent = e.target.getAttribute('data-title');
 
-				e.target.setAttribute('data-title-for', randomID);
+				e.target.setAttribute('data-title-for', randomId);
 				e.target.parentElement.appendChild(div);
 			}
 		}

@@ -1,0 +1,30 @@
+.Info{
+	color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+	background-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	display: block;
+	width: 100%;
+	padding: var(--pd) calc(var(--pd) * 2);
+	border-radius: var(--rd);
+	margin: calc(var(--rd) * 2) 0;
+	font-size: 0.9rem;
+}
+
+.Info-warning{
+	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	background-color: hsl(35 var(--danger-sat) var(--danger-lig));
+}
+
+.Info-pri{
+	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+}
+
+.Info-sec{
+	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	background-color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
+}
+
+.Info-danger{
+	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	background-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
+}

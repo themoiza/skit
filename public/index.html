@@ -8,6 +8,8 @@
 		<meta name="description" content="SKIT is an advanced front-end for web software development. Simple because it has as few dependencies as possible.">
 		<link rel="stylesheet" href="css/skit.css">
 		<link rel="stylesheet" href="assets/skit-dist/skit.css">
+		<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 	</head>
 	<body>
 		<header class="header pd1">
@@ -17,9 +19,10 @@
 				<div class="col-grid-8 tx-right">
 					<div class="field">
 						<div class="toggle">
-							<input type="checkbox" onchange="Darkmode(this.checked)" aria-label="Toggle Dark Mode" checked="checked" />
+							<input type="checkbox" onchange="Darkmode(this.checked)" data-title="Toggle Dark Mode" data-title-position="left" aria-label="Toggle Dark Mode" checked="checked" />
 						</div>
 					</div>
+					<button class="btn btn-trans"><i class="fi fi-rr-settings"></i></button>
 				</div>
 			</div>
 		</header>
@@ -50,13 +53,17 @@
 						<div><a href="/#menuInputWeek">Week</a></div>
 					</div>
 					<button onclick="submenu2.classList.toggle('active')" class="title">NOT STANDARD</button>
-					<div id="submenu2" class="submenu">
+					<div id="submenu2" class="submenu active">
+						<div><a href="/#menuInfo">Info</a></div>
 						<div><a href="/#menuCompToggle">Toggle</a></div>
 					</div>
 					<button onclick="submenu3.classList.toggle('active')" class="title">JS COMPONENTS</button>
-					<div id="submenu3" class="submenu">
+					<div id="submenu3" class="submenu active">
+						<div><a href="/#menuJsConfirm">Confirm</a></div>
 						<div><a href="/#menuJsCopy">Copy</a></div>
+						<div><a href="/#menuJsDebounce">Debounce</a></div>
 						<div><a href="/#menuJsTooltip">Tooltip</a></div>
+						<div><a href="/#menuJsWarning">Warning (Toasts)</a></div>
 					</div>
 				</nav>
 			</div>
@@ -83,7 +90,11 @@
 							<input type="checkbox" id="checkbox2" name="" value="" /><label for="checkbox2">Check 2</label>
 						</div>
 						<div class="field">
-							<input type="checkbox" id="checkbox3" name="" value="" disabled="disabled" /><label for="checkbox3">disabled</label>
+							<input type="checkbox" id="checkbox3" name="" value="" indeterminate="indeterminate" /><label for="checkbox3">Indeterminate</label>
+							<script>checkbox3.indeterminate = true;</script>
+						</div>
+						<div class="field">
+							<input type="checkbox" id="checkbox4" name="" value="" disabled="disabled" /><label for="checkbox4">disabled</label>
 						</div>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
@@ -97,7 +108,7 @@
 	&lt;input&nbsp;type=&quot;checkbox&quot;&nbsp;id=&quot;checkbox3&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;checkbox3&quot;&gt;disabled&lt;/label&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('checkboxSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('checkboxSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -116,7 +127,7 @@
 	&lt;input&nbsp;type=&quot;color&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;#777777&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('colorSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('colorSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -149,7 +160,7 @@
 	&lt;/datalist&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('datalistSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('datalistSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -168,7 +179,7 @@
 	&lt;input&nbsp;type=&quot;date&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('dateSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('dateSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -187,7 +198,7 @@
 	&lt;input&nbsp;type=&quot;datetime&#45;local&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('datelocalSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('datelocalSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -206,7 +217,7 @@
 	&lt;input&nbsp;type=&quot;email&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;e&#45;mail&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('emailSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('emailSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -225,7 +236,7 @@
 	&lt;input&nbsp;type=&quot;file&quot;&nbsp;name=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('fileSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('fileSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 
@@ -246,7 +257,7 @@
 	&lt;input&nbsp;type=&quot;month&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;2023&#45;01&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('monthSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('monthSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 
@@ -267,7 +278,7 @@
 	&lt;input&nbsp;type=&quot;number&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;step=&quot;0.01&quot;&nbsp;placeholder=&quot;0.01&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('numberSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('numberSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 
@@ -288,7 +299,7 @@
 	&lt;input&nbsp;type=&quot;password&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;password&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('passwordSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('passwordSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -314,7 +325,7 @@
 	&lt;input&nbsp;type=&quot;radio&quot;&nbsp;id=&quot;radio3&quot;&nbsp;name=&quot;radio1&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;&lt;label&nbsp;for=&quot;radio3&quot;&gt;disabled&lt;/label&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('radioSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('radioSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 
@@ -335,7 +346,7 @@
 	&lt;input&nbsp;type=&quot;range&quot;&nbsp;name=&quot;&quot;&nbsp;step=&quot;1&quot;&nbsp;min=&quot;0&quot;&nbsp;max=&quot;100&quot;&nbsp;value=&quot;50&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('rangeSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('rangeSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 
@@ -356,7 +367,7 @@
 	&lt;input&nbsp;type=&quot;search&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;search&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('searchSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('searchSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 
@@ -383,7 +394,7 @@
 	&lt;/select&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('selectSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('selectSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -402,7 +413,7 @@
 	&lt;input&nbsp;type=&quot;tel&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;tel&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('telSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('telSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 
@@ -422,7 +433,7 @@
 	&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('textSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('textSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -442,7 +453,7 @@
 	&lt;textarea&nbsp;name=&quot;&quot;&nbsp;placeholder=&quot;textarea&quot;&gt;&lt;/textarea&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('textareaSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('textareaSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -462,7 +473,7 @@
 	&lt;input&nbsp;type=&quot;time&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('timeSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('timeSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -482,7 +493,7 @@
 	&lt;input&nbsp;type=&quot;url&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;url&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('urlSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('urlSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<hr class="col-flex" />
@@ -502,13 +513,26 @@
 	&lt;input&nbsp;type=&quot;week&quot;&nbsp;name=&quot;&quot;&nbsp;value=&quot;2023&#45;W01&quot;&nbsp;/&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('weekSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('weekSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 				</div>
 				<hr />
 				<h2>NOT STANDARD</h2>
 				<div class="flex">
+					<div class="col-flex-280px pdt2 pdb2" id="menuInfo">
+						<div class="margin-fix">
+							<div class="Info">Info</div>
+							<div class="Info Info-pri">Info pri</div>
+							<div class="Info Info-sec">Info sec</div>
+							<div class="Info Info-warning">Info warning</div>
+							<div class="Info Info-danger">Info Danger</div>
+						</div>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+						yyy
+					</div>
+					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuCompToggle">
 						<p class="mgb2"><b>Toggle</b></p>
 						<div class="field">
@@ -526,31 +550,70 @@
 	&lt;/div&gt;
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('toggleSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('toggleSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 				</div>
 				<hr />
 				<h2>JS COMPONENTS</h2>
 				<div class="flex">
+					
+					<div class="col-flex-280px pdt2 pdb2" id="menuJsConfirm">
+						<p class="mgb2"><b>Confirm</b></p>
+						<p>
+							<button onclick="Confirm({
+								'title': 'DELETE IT?',
+								'message': 'You can do it?',
+								'ok': `YES`,
+								'no': `NO`,
+								'okclass': 'btn-danger btn-med',
+								'noclass': 'btn btn-med',
+								'okFn': () => {}
+							});" class="btn btn-danger"><i class="fi fi-rs-trash"></i> DELETE</button>
+						</p>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+					</div>
+					<hr class="col-flex" />
+
 					<div class="col-flex-280px pdt2 pdb2" id="menuJsCopy">
 						<p class="mgb2"><b>Copy to Clipboard</b></p>
-						<p id="copyId">Exorcizamus te, omnis immundus spiritus, omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio, omnis congregatio et secta diabolica... Ergo, draco maledicte et omnis legio diabolica, adjuramus te ... cessa decipere humanas creaturas, eisque æternæ perditionìs venenum propinare...</p>
+						<p id="copyId">Exorcizamus te, omnis immundus spiritus, omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio, omnis congregatio et secta diabolica...</p>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('copyId')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('copyId')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
 					</div>
 					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 <pre id="copySource">&lt;p&nbsp;id=&quot;id&quot;&gt;Text&lt;p&gt;
 &lt;button&nbsp;onclick=&quot;Copy(&#39;id&#39;)&quot;&gt;copy&lt;/button&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('copySource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('copySource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuJsDebounce">
+						<p class="mgb2"><b>Debounce</b></p>
+						<p><button class="btn btn-pri" onclick="Debounce(() => {
+							Warning.show({'title': 'Debounce','message': 'Click!'})
+						}, 1000, 'debounce1')">Click fast n times</button></p>
+						<div class="field w100p">
+							<label for="input14" class="label">Text any thing</label>
+							<textarea oninput="testDebounce()" id="input14" name="" placeholder="textarea"></textarea>
+						</div>
+						<script>
+							testDebounce = () => {
+								Debounce(() => {
+									Warning.show({'title': 'Debounce','message': 'Text!'})
+								}, 1000, 'debounce1');
+							}
+						</script>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
 					</div>
 					<hr class="col-flex" />
 					<div class="col-flex-280px pdt2 pdb2" id="menuJsTooltip">
 						<p class="mgb2"><b>ToolTip</b></p>
-						<div>
+						<div class="margin-fix">
 							<button data-title="Tooltip 1" data-title-position="top">TOP</button> 
 							<button data-title="Tooltip 2" data-title-position="bottom">BOTTOM</button> 
 							<button data-title="Tooltip 3" data-title-position="left">LEFT</button> 
@@ -575,17 +638,36 @@
 	Exorcizamus&nbsp;te,&nbsp;omnis&nbsp;immundus&nbsp;spiritus,&nbsp;omnis&nbsp;satanica&nbsp;potestas,&nbsp;omnis&nbsp;incursio&nbsp;infernalis&nbsp;adversarii,&nbsp;omnis&nbsp;legio,&nbsp;omnis&nbsp;congregatio&nbsp;et&nbsp;secta&nbsp;diabolica...&nbsp;Ergo,&nbsp;draco&nbsp;maledicte&nbsp;et&nbsp;omnis&nbsp;legio&nbsp;diabolica,&nbsp;adjuramus&nbsp;te&nbsp;...&nbsp;cessa&nbsp;decipere&nbsp;humanas&nbsp;creaturas,&nbsp;eisque&nbsp;æternæ&nbsp;perditionìs&nbsp;venenum&nbsp;propinare...
 &lt;/div&gt;</pre>
 						<p>
-							<button onclick="Tooltip.update(this, 'copied');Copy('tooltipSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right">copy</button>
+							<button onclick="Tooltip.update(this, 'copied');Copy('tooltipSource')" class="btn btn-pri" data-title="copy to clipboard" data-title-position="right"><i class="fi fi-rs-copy"></i> COPY</button>
 						</p>
+					</div>
+					<hr class="col-flex" />
+					<div class="col-flex-280px pdt2 pdb2" id="menuJsWarning">
+						<p class="mgb2"><b>Warning</b></p>
+						<button class="btn btn-pri" onclick="Warning.show({'title': 'title','message': 'Exorcizamus te, omnis immundus spiritus, omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio, omnis congregatio et secta diabolica... Ergo, draco maledicte et omnis legio diabolica, adjuramus te ... cessa decipere humanas creaturas, eisque æternæ perditionìs venenum propinare...', 'timeout': 15000, 'id': String(Math.random())});">Open</button>
+						<button class="btn btn-pri" onclick="Warning.show({'color': 'danger', 'title': 'title','message': 'Danger', 'timeout': 1500, 'id': 'danger'});">Open Danger</button>
+						<button class="btn btn-pri" onclick="Warning.show({'color': 'pri', 'title': 'title','message': 'Pri', 'timeout': 1500, 'id': 'pri'});">Open Pri</button>
+						<button class="btn btn-pri" onclick="Warning.show({'color': 'sec', 'title': 'title','message': 'Sec', 'timeout': 1500, 'id': 'sec'});">Open Sec</button>
+						<button class="btn btn-pri" onclick="Warning.show({'color': 'dark', 'title': 'title','message': 'Dark', 'timeout': 1500, 'id': 'dark'});">Open Dark</button>
+						<button class="btn btn-pri" onclick="Warning.show({'color': 'light', 'title': 'title','message': 'Light', 'timeout': 1500, 'id': 'light'});">Open Light</button>
+					</div>
+					<div class="col-flex-calc-280 pdt2 pdb2 pdl2">
+
+						xx
 					</div>
 				</div>
 			</div>
 		</div>
 		<footer>
-			<p>Created on Republic of Rio Grande do Sul, 🇧🇷.</p>
+			<p>Created on Republic of Rio Grande do Sul 🇧🇷.</p>
 		</footer>
 		<script async src="assets/skit-dist/skit.js"></script>
 		<script>
+
+			window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+				var mode = e.matches ? Darkmode(true) : Darkmode(false);
+			});
+
 			window.Darkmode = (t) => {
 
 				if(t){

@@ -23,7 +23,7 @@ window.Confirm = function(obj){
 					<div class="Confirm-title">`+obj.title+`</div>
 					`+message+`
 					<div class="Confirm-actions">
-						<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button><button id="Confirm-no" class="`+obj.noclass+`">`+obj.no+`</button> 
+						<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button> <button id="Confirm-no" class="`+obj.noclass+`">`+obj.no+`</button> 
 					</div>
 				</div>`;
 		}

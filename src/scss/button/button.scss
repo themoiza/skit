@@ -13,15 +13,8 @@ button, .btn{
 	text-align: center;
 	height: var(--field-h);
 	padding: 0 var(--pd);
-	box-sizing: border-box;
 	vertical-align: middle;
 	cursor: pointer;
-	margin-bottom: 0.2rem;
-
-	& i{
-		font-style: normal !important;
-		font-size: 1.5rem;
-	}
 }
 
 .btn-med{
