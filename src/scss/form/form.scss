@@ -284,6 +284,11 @@
 		cursor: not-allowed;
 		filter: grayscale(0.5);
 	}
+
+	& input:read-only:not(:disabled),
+	& textarea:read-only:not(:disabled){
+		font-style: italic;
+	}
 }
 
 .toggle{

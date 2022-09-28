@@ -1,19 +1,19 @@
 :root {
-	--dark-hue: 0;
-	--dark-sat: 0%;
-	--dark-lig: 3%;
+	--dark-hue: 20;
+	--dark-sat: 6%;
+	--dark-lig: 9%;
 	--light-hue: 0;
 	--light-sat: 0%;
 	--light-lig: 98%;
-	--pri-hue: 240;
+	--pri-hue: 245;
 	--pri-sat: 48%;
-	--pri-lig: 36%;
-	--sec-hue: 160;
-	--sec-sat: 60%;
-	--sec-lig: 20%;
-	--danger-hue: 0;
-	--danger-sat: 58%;
-	--danger-lig: 39%;
+	--pri-lig: 40%;
+	--sec-hue: 202;
+	--sec-sat: 61%;
+	--sec-lig: 54%;
+	--danger-hue: 5;
+	--danger-sat: 60%;
+	--danger-lig: 41%;
 	--foreground-hue: var(--dark-hue);
 	--foreground-sat: var(--dark-sat);
 	--foreground-lig: var(--dark-lig);
@@ -181,12 +181,13 @@ hr{
 	top: 4rem;
 	position: fixed;
 	overflow-y: auto;
-	width: 14rem;
+	width: 220px;
 	padding-bottom: 2rem;
 }
 
 .menu .title{
 	display: block;
+	appearance: none;
 	padding: 0.75rem 1rem;
 	width: 100%;
 	box-sizing: border-box;
@@ -197,6 +198,7 @@ hr{
 	background: transparent;
 	border: none;
 	outline: none;
+	color: hsl(var(--foreground-hue), var(--foreground-sat), calc(var(--foreground-lig) + 2%));
 }
 
 .menu a{
@@ -205,6 +207,7 @@ hr{
 	width: 100%;
 	box-sizing: border-box;
 	font-size: 0.85rem;
+	color: hsl(var(--foreground-hue), var(--foreground-sat), calc(var(--foreground-lig) + 2%));
 }
 .menu a:hover{
 	background-color: rgba(0,0,0,0.05);
