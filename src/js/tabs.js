@@ -16,8 +16,8 @@ class Tabs{
 		this.vue = new Vue({
 			el: '#'+this.id,
 			template: `
-				<div class="sk-tabs-btns">
-					<div v-for="(t, i) in tabs" :class="t.active"><button @click="setTab(i)">{{t.tab}}</button></div>
+				<div class="Tabs-btns">
+					<div v-for="(t, i) in tabs" :class="t.active"><button type="button" @click="setTab(i)" v-html="t.tab"></button></div>
 				</div>`,
 			data: {
 				tabs: this.conf,

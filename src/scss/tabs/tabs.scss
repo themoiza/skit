@@ -1,44 +1,57 @@
-.sk-tabs{
+.Tabs{
 	display: block;
 	width: 100%;
-	background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+	background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 }
-.sk-tabs-btns{
-	display: flex;
-	padding-left: 1px;
-	padding-top: 2px;
+.Tabs-btns{
 
-	& div{
-		border-bottom: 3px solid hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-	}
+	display: flex;
+	padding-top: 5px;
+	border: 1px solid hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 
 	& button{
-		border: none !important;
-		background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-		color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+		appearance: none;
+		border: 1px solid transparent;
+		border-bottom: 1px solid transparent;
+		border-radius: var(--rd) var(--rd) 0 0;
+		outline: none !important;
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+		background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 		height: var(--field-h);
 		font-size: 0.8rem;
+		padding: 0 calc(var(--pd) * 2);
+		cursor: pointer;
 
 		&:hover{
-			background-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 3%));
+			color: hsl(var(--background-hue) var(--background-sat) var(--background-lig-soft));
+			border-bottom: 1px solid hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig-soft));
+			background-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 		}
+	}
+
+	& div:first-child button{
+		border-left: 0;
 	}
 
 	& .active{
-		border-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+
+		border-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 
 		& button{
-			background-color: hsl(var(--pri-hue) var(--pri-sat) calc(var(--pri-lig) - 6%));
+			border-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
+			transform: translateY(1px);
+			border-bottom: 1px solid hsl(var(--background-hue), var(--background-sat), var(--background-lig));
 		}
 	}
 }
-.sk-tabs-area{
+
+.Tabs-area{
 
 	position: relative;
 	display: block;
 	width: 100%;
     background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
-	border: 1px solid hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+	border: 1px solid hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 	border-top: none;
 
 	& .active{
@@ -57,5 +70,17 @@
 		z-index: 0;
 		overflow: auto;
 		pointer-events: none;
+	}
+
+	/* SECOND LEVEL */
+	& .Tabs-btns{
+		border-top: none;
+		border-right: none;
+		border-left: none;
+	}
+
+	/* SECOND LEVEL */
+	& .Tabs-area{
+		border: none;
 	}
 }

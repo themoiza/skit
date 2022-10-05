@@ -1,0 +1,54 @@
+.field{
+
+	& .Range{
+		border: none;
+		appearance: none;
+		margin: 0;
+		padding: 0;
+		display: block;
+		font-family: var(--font-family);
+		font-size: var(--font-size);
+		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+		background-color: transparent;
+		width: inherit;
+		height: var(--field-h);
+		min-width: 1rem;
+		outline: none;
+		cursor: pointer;
+		accent-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+	}
+
+	& .Range:focus {
+		outline: none;
+	}
+
+	& .Range::-webkit-slider-runnable-track {
+		width: 100%;
+		box-shadow: none;
+		background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+		border-radius: var(--rd);
+		border: none;
+		height: 3px;
+	}
+
+	& .Range::-moz-range-track {
+		width: 100%;
+		box-shadow: none;
+		background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+		border-radius: var(--rd);
+		border: none;
+		height: 3px;
+	}
+
+	& .Range::-webkit-slider-thumb {
+		@include thumb;
+	}
+	& .Range::-moz-range-thumb {
+		@include thumb;
+	}
+
+	& .Range:disabled{
+		opacity: 0.5;
+		cursor: not-allowed !important;
+	}
+}

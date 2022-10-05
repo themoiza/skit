@@ -1,0 +1,87 @@
+.field{
+
+	.Dualrange{
+		position: relative;
+		display: block;
+		height: var(--field-h);
+		min-width: 3rem;
+		width: inherit;
+
+		&::before{
+			content: "";
+			width: 100%;
+			height: 3px;
+			background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+			z-index: 0;
+			position: absolute;
+			left: 0;
+			top: calc(var(--field-h) / 2);
+			transform: translateY(-1px);
+			border-radius: var(--rd);
+			cursor: inherit;
+		}
+
+		& input[type=range]{
+
+			appearance: none;
+
+			&::-webkit-slider-runnable-track, 
+			&::-webkit-slider-thumb{
+				appearance: none;
+				background-color: transparent;
+			}
+
+			position: absolute;
+			top: calc(var(--field-h) / 2 - 1px);
+			z-index: 1;
+			background: none;
+			pointer-events: none;
+			outline: none;
+			border: none;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+
+			&::-webkit-slider-thumb {
+				@include thumb;
+				transform: translateY(-1px);
+			}
+			&::-moz-range-thumb {
+				@include thumb;
+				transform: translateY(-1px);
+			}
+		}
+
+		& input[type=range]:first-child{
+
+			left: 0;
+			right: 0;
+			cursor: inherit;
+		}
+
+		& input[type=range]:last-child{
+
+			left: 0;
+			right: 0;
+			cursor: inherit;
+		}
+
+		&:hover{
+			cursor: pointer;
+		}
+
+		&:disabled:hover,
+		&:disabled::before{
+			cursor: not-allowed;
+		}
+	}
+}
+
+.disabled{
+
+	& .Dualrange{
+		opacity: 0.5;
+		cursor: not-allowed !important;
+		filter: grayscale(0.5);
+	}
+}

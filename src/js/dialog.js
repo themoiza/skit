@@ -4,12 +4,13 @@ window.Dialog = {
 
 		obj.html = obj.html.split('{{dialogs}}').join('');
 
-		if(!document.getElementById('boss-dialog')){
+		if(!document.getElementById('dialog')){
+
 			var dialog = document.createElement('div');
-			dialog.setAttribute('id', 'boss-dialog');
+			dialog.setAttribute('id', 'dialog');
 
 			var area = document.createElement('div');
-			area.classList.add('boss-dialog-area');
+			area.classList.add('dialog-area');
 			area.innerHTML = obj.html;
 
 			dialog.appendChild(area);
@@ -17,12 +18,12 @@ window.Dialog = {
 
 		}else{
 
-			var dialog = document.getElementById('boss-dialog');
+			var dialog = document.getElementById('dialog');
 			dialog.classList.remove('hidden');
 			dialog.innerHTML = '';
 
 			var area = document.createElement('div');
-			area.classList.add('boss-dialog-area');
+			area.classList.add('dialog-area');
 			area.innerHTML = obj.html;
 
 			if(obj.close){
@@ -34,10 +35,10 @@ window.Dialog = {
 		}
 
 		if(obj.invisible){
-			area.classList.add('boss-dialog-invisible');
+			area.classList.add('dialog-invisible');
 		}
 
-		Boss.evts.add(Boss.evtTouchUp(), document.getElementById('boss-dialog-close'), function(evts){
+		Boss.evts.add(Boss.evtTouchUp(), document.getElementById('dialog-close'), function(evts){
 
 			Boss.dialog.close();
 
@@ -48,9 +49,9 @@ window.Dialog = {
 	},
 	close: function(){
 
-		if(document.getElementById('boss-dialog')){
+		if(document.getElementById('dialog')){
 
-			var dialog = document.getElementById('boss-dialog');
+			var dialog = document.getElementById('dialog');
 			dialog.classList.add('hidden');
 			dialog.innerHTML = '';
 

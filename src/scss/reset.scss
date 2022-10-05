@@ -12,6 +12,10 @@ body{
 	background-color: hsl(var(--background-hue), var(--background-sat), calc(var(--background-lig) - 3%));
 }
 
+.Img-block{
+    display: block;
+}
+
 .hidden {
     margin-top: -9999px !important;
     top: 0px;
@@ -29,4 +33,9 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
+}
+
+.No-scroll{
+    overflow: hidden;
+    padding-right: 0.5rem;
 }

@@ -1,6 +1,6 @@
 .field{
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	position: relative;
 
 	& .label{
@@ -19,7 +19,6 @@
 	& input[type=email],
 	& input[type=file],
 	& input[type=password],
-	& input[type=range],
 	& input[type=search],
 	& input[type=time],
 	& input[type=url],
@@ -28,6 +27,7 @@
 	& input[type=text],
 	& input[type=tel],
 	& select{
+		display: block;
 		border: none;
 		padding: 0 var(--pd);
 		font-family: var(--font-family);
@@ -35,11 +35,11 @@
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 		border-radius: var(--rd);
-		width: 100%;
+		width: inherit;
 		height: var(--field-h);
 		min-width: 1rem;
 		outline-width: 1px;
-		outline-color: hsl(var(--light-hue) var(--light-sat) calc(var(--foreground-lig) + 50%));
+		outline-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 		outline-style: solid;
 	}
 
@@ -153,12 +153,6 @@
 		text-align: right;
 	}
 
-	& input[type=range]{
-		outline: none;
-		padding: 0;
-		accent-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-	}
-
 	& input::placeholder,
 	& textarea::placeholder{
 		opacity: .5;
@@ -186,11 +180,6 @@
 		outline-style: solid;
 	}
 
-	& input[type=range]:focus{
-		outline: none;
-		padding: 0;
-	}
-
 	& input:invalid,
 	& textarea:invalid{
 		background-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) + 25%)) !important;
@@ -206,57 +195,6 @@
 		position: absolute;
 		right: 5px;
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-	}
-
-	input[type=range] {
-		height: var(--field-h);
-		-webkit-appearance: none;
-		margin: 0;
-		background-color: transparent;
-	}
-	input[type=range]:focus {
-		outline: none;
-	}
-	input[type=range]::-webkit-slider-runnable-track {
-		width: 100%;
-		height: 5px;
-		cursor: pointer;
-		box-shadow: none;
-		background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-		border-radius: var(--rd);
-		border: none;
-	}
-	input[type=range]::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		box-shadow: none;
-		border: 2px solid #FFFFFF;
-		height: calc(var(--field-h) / 1.5);
-		width: calc(var(--field-h) / 1.5);
-		border-radius: calc(var(--field-h) / 1.5);
-		background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-		cursor: pointer;
-		margin-top: -7px;
-	}
-	input[type=range]:focus::-webkit-slider-runnable-track {
-		background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-	}
-	input[type=range]::-moz-range-track {
-		cursor: pointer;
-		width: 100%;
-		height: 5px;
-		box-shadow: none;
-		background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-		border-radius: 2px;
-		border: none;
-	}
-	input[type=range]::-moz-range-thumb {
-		cursor: pointer;
-		box-shadow: none;
-		border: 2px solid #FFFFFF;
-		height: calc(var(--field-h) / 1.5);
-		width: calc(var(--field-h) / 1.5);
-		border-radius: calc(var(--field-h) / 1.5);
-		background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 	}
 
 	& input[type=color]:disabled,
@@ -277,7 +215,6 @@
 	& textarea:disabled,
 	& input[type=radio]:disabled,
 	& input[type=checkbox]:disabled,
-	& input[type=range]:disabled,
 	& input[type=radio]:disabled + label,
 	& input[type=checkbox]:disabled + label{
 		opacity: 0.5;
@@ -351,3 +288,7 @@
 	cursor: not-allowed;
 	filter: grayscale(0.5);
 }
+
+@import 'form/thumb.scss';
+@import 'form/dualrange.scss';
+@import 'form/range.scss';

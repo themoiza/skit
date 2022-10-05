@@ -1,0 +1,13 @@
+@mixin thumb() {
+	appearance: none;
+    box-shadow: none;
+    cursor: inherit;
+    height: calc(var(--field-h) / 1.5);
+    width: calc(var(--field-h) / 1.5);
+	border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    background: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+	pointer-events: auto;
+	z-index: 1;
+    margin-top: calc(var(--field-h) / 4 * -1);
+}

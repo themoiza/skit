@@ -17,10 +17,13 @@
 	--foreground-hue: var(--dark-hue);
 	--foreground-sat: var(--dark-sat);
 	--foreground-lig: var(--dark-lig);
+	--foreground-lig-soft: 80%;
 	--background-hue: var(--light-hue);
 	--background-sat: var(--light-sat);
 	--background-lig: var(--light-lig);
+	--background-lig-soft: 20%;
 	--font-family: monospace;
+	--radius: 3px;
 }
 
 /* DARK MODE */
@@ -28,9 +31,11 @@
 	--foreground-hue: var(--dark-hue);
 	--foreground-sat: var(--dark-sat);
 	--foreground-lig: var(--dark-lig);
+	--foreground-lig-soft: 80%;
 	--background-hue: var(--light-hue);
 	--background-sat: var(--light-sat);
 	--background-lig: var(--light-lig);
+	--background-lig-soft: 20%;
 }
 
 /* DARK MODE */
@@ -38,9 +43,11 @@
 	--foreground-hue: var(--light-hue);
 	--foreground-sat: var(--light-sat);
 	--foreground-lig: var(--light-lig);
+	--foreground-lig-soft: 20%;
 	--background-hue: var(--dark-hue);
 	--background-sat: var(--dark-sat);
 	--background-lig: var(--dark-lig);
+	--background-lig-soft: 80%;
 }
 
 .DarkMode .header{
@@ -100,19 +107,6 @@ body {
 	font-size: 1rem;
 	transition: background-color, color 0.18s;
 }
-pre{
-	background-color: hsl(var(--background-hue), var(--background-sat), calc(var(--background-lig) + 2%));
-	box-sizing: border-box;
-	padding: var(--pd);
-	tab-size: 1.5rem;
-	font-family: monospace;
-	font-size: calc(1rem / 1.2);
-	overflow-x: auto;
-}
-code{
-	tab-size: 2em;
-	font-size: 0.9rem;
-}
 
 a{
 	text-decoration: none;
@@ -120,7 +114,7 @@ a{
 }
 p{
 	margin: 0.5rem 0;
-	font-size: 1rem;
+	font-size: 0.9rem;
 }
 h1{
 	margin: 1.75rem 0 1.25rem 0;
@@ -133,8 +127,7 @@ h2{
 hr{
 	height: 1px;
 	border: none;
-	background-color: hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig));
-	opacity: 0.1;
+	background-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 	margin: 0;
 	padding: 0;
 }
@@ -172,7 +165,6 @@ hr{
 .skit{
 	height: 24px;
 	display: block;
-	filter: brightness(100);
 }
 
 .menu{
@@ -188,11 +180,12 @@ hr{
 .menu .title{
 	display: block;
 	appearance: none;
-	padding: 0.75rem 1rem;
+	cursor: pointer;
+	padding: 0.6rem 1rem;
 	width: 100%;
 	box-sizing: border-box;
 	font-weight: bold;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	line-height: 1.1rem;
 	text-align: left;
 	background: transparent;
@@ -201,16 +194,20 @@ hr{
 	color: hsl(var(--foreground-hue), var(--foreground-sat), calc(var(--foreground-lig) + 2%));
 }
 
+.menu .title:hover{
+	background-color: rgba(0,0,0,0.1);
+}
+
 .menu a{
 	display: block;
-	padding: 0.5rem 1rem 0.5rem 2rem;
+	padding: 0.4rem 1rem 0.4rem 2rem;
 	width: 100%;
 	box-sizing: border-box;
 	font-size: 0.85rem;
 	color: hsl(var(--foreground-hue), var(--foreground-sat), calc(var(--foreground-lig) + 2%));
 }
 .menu a:hover{
-	background-color: rgba(0,0,0,0.05);
+	background-color: rgba(0,0,0,0.1);
 }
 .submenu{
 	display: block;
@@ -231,14 +228,136 @@ footer p{
 	font-size: 0.7rem;
 	text-align: center;
 }
+pre{
+	tab-size: 1.5rem;
+}
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5rem;
+	font-family: monospace;
+	font-size: calc(1rem / 1.2);
+}
+code.hljs {
+    padding: 3px 5px;
+}
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+}
+code.hljs {
+    padding: 3px 5px;
+}
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-hue: var(--light-hue);
-		--foreground-sat: var(--light-sat);
-		--foreground-lig: var(--light-lig);
-		--background-hue: var(--dark-hue);
-		--background-sat: var(--dark-sat);
-		--background-lig: var(--dark-lig);
-	}
+/* DARK MODE*/
+.hljs {
+    background: #23241f;
+    color: #f8f8f2;
+}
+.hljs-subst,
+.hljs-tag {
+    color: #f8f8f2;
+}
+.hljs-emphasis,
+.hljs-strong {
+    color: #a8a8a2;
+}
+.hljs-bullet,
+.hljs-link,
+.hljs-literal,
+.hljs-number,
+.hljs-quote,
+.hljs-regexp {
+    color: #ae81ff;
+}
+.hljs-code,
+.hljs-section,
+.hljs-selector-class,
+.hljs-title {
+    color: #a6e22e;
+}
+.hljs-strong {
+    font-weight: 700;
+}
+.hljs-emphasis {
+    font-style: italic;
+}
+.hljs-attr,
+.hljs-keyword,
+.hljs-name,
+.hljs-selector-tag {
+    color: #f92672;
+}
+.hljs-attribute,
+.hljs-symbol {
+    color: #66d9ef;
+}
+.hljs-class .hljs-title,
+.hljs-params,
+.hljs-title.class_ {
+    color: #f8f8f2;
+}
+.hljs-addition,
+.hljs-built_in,
+.hljs-selector-attr,
+.hljs-selector-id,
+.hljs-selector-pseudo,
+.hljs-string,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable {
+    color: #e6db74;
+}
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+    color: #75715e;
+}
+
+/* LIGHT MODE*/
+.LightMode .hljs {
+    background: #eaeef3;
+    color: #00193a;
+}
+.LightMode .hljs-doctag,
+.LightMode .hljs-keyword,
+.LightMode .hljs-name,
+.LightMode .hljs-section,
+.LightMode .hljs-selector-tag,
+.LightMode .hljs-strong,
+.LightMode .hljs-title {
+    font-weight: 700;
+}
+.LightMode .hljs-comment {
+    color: #738191;
+}
+.LightMode .hljs-addition,
+.LightMode .hljs-built_in,
+.LightMode .hljs-literal,
+.LightMode .hljs-name,
+.LightMode .hljs-quote,
+.LightMode .hljs-section,
+.LightMode .hljs-selector-class,
+.LightMode .hljs-selector-id,
+.LightMode .hljs-string,
+.LightMode .hljs-tag,
+.LightMode .hljs-title,
+.LightMode .hljs-type {
+    color: #0048ab;
+}
+.LightMode .hljs-attribute,
+.LightMode .hljs-bullet,
+.LightMode .hljs-deletion,
+.LightMode .hljs-link,
+.LightMode .hljs-meta,
+.LightMode .hljs-regexp,
+.LightMode .hljs-subst,
+.LightMode .hljs-symbol,
+.LightMode .hljs-template-variable,
+.LightMode .hljs-variable {
+    color: #4c81c9;
+}
+.LightMode .hljs-emphasis {
+    font-style: italic;
 }
