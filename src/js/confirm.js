@@ -104,19 +104,39 @@ window.Confirm = function(obj){
 };
 
 
-window.Copy = (id) => {
+window.Copy = {
 
-	var el = document.getElementById(id);
+	id: (id) => {
 
-	if(el){
+		if(document.getElementById(id)){
+
+			var el = document.getElementById(id);
+
+			var tx = document.createElement('textarea');
+			tx.textContent = el.value ?? el.textContent.replace(/\s+$/, '').replace(/^\s+/, '');
+			tx.focus();
+			tx.classList.add('hidden');
+			tx.style.width = '1px';
+			tx.style.height = '1px';
+			document.body.appendChild(tx);
+			tx.select();
+			document.execCommand('copy');
+		
+			window.setTimeout(() => {
+				tx.parentNode.removeChild(tx);
+			}, 10);
+		}
+	},
+
+	string: (t) => {
 
 		var tx = document.createElement('textarea');
-		tx.textContent = el.textContent.replace(/\s+$/, '').replace(/^\s+/, '');
+		tx.textContent = t;
 		tx.focus();
 		tx.classList.add('hidden');
 		tx.style.width = '1px';
 		tx.style.height = '1px';
-		el.appendChild(tx);
+		document.body.appendChild(tx);
 		tx.select();
 		document.execCommand('copy');
 	

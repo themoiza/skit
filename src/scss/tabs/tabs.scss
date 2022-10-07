@@ -8,6 +8,7 @@
 	display: flex;
 	padding-top: 5px;
 	border: 1px solid hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
+	border-radius: var(--radius) var(--radius) 0 0;
 
 	& button{
 		appearance: none;
@@ -52,6 +53,7 @@
 	width: 100%;
     background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 	border: 1px solid hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
+	border-radius: 0 0 var(--radius) var(--radius);
 	border-top: none;
 
 	& .active{
