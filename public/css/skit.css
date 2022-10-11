@@ -2,9 +2,11 @@
 	--dark-hue: 20;
 	--dark-sat: 6%;
 	--dark-lig: 9%;
+	--dark-lig-soft: 80%;
 	--light-hue: 0;
 	--light-sat: 0%;
 	--light-lig: 98%;
+	--light-lig-soft: 20%;
 	--pri-hue: 245;
 	--pri-sat: 48%;
 	--pri-lig: 40%;

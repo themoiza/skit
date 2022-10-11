@@ -39,3 +39,8 @@ body{
     overflow: hidden;
     padding-right: 0.5rem;
 }
+
+i[class^="fi-"]{
+	display: inline-block;
+	vertical-align: top;
+}
