@@ -11,6 +11,8 @@
 	z-index: 11;
 	max-width: 40rem;
 	position: fixed;
+	top: 15rem;
+	transform: translate(0, 0);
 
 	& .TopBar{
 
@@ -51,9 +53,11 @@
 			}
 		}
 	}
+
 	& .ModalContent{
 		border: 1px solid hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
 		border-radius: 0 0 var(--rd) var(--rd);
 		border-top: 0;
+		background-color: hsl(var(--light-hue), var(--light-sat), var(--light-lig));
 	}
 }

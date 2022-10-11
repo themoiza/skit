@@ -29,18 +29,17 @@
 	& select{
 		display: block;
 		border: none;
+		outline: none;
 		padding: 0 var(--pd);
 		font-family: var(--font-family);
 		font-size: var(--font-size);
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+		box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
 		border-radius: var(--rd);
 		width: inherit;
 		height: var(--field-h);
 		min-width: 1rem;
-		outline-width: 1px;
-		outline-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
-		outline-style: solid;
 	}
 
 	& textarea{
@@ -48,6 +47,7 @@
 		font-size: var(--font-size);
 		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 		background-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) + 10%));
+		box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
 		border-radius: var(--rd);
 		width: 100%;
 		border: none;
@@ -55,9 +55,9 @@
 		padding: var(--pd);
 		min-height: calc(var(--field-h) * 2);
 		tab-size: 1.5rem;
-		outline-width: 1px;
-		outline-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) - 30%));
-		outline-style: solid;
+		//outline-width: 1px;
+		//outline-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) - 30%));
+		//outline-style: solid;
 	}
 
 	& input[type=radio],
@@ -175,20 +175,18 @@
 	& input[type=tel]:focus,
 	& select:focus,
 	& textarea:focus{
-		outline-width: 2px;
-		outline-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-		outline-style: solid;
+		box-shadow: 0 0 0 2px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
 	}
 
 	& input:invalid,
 	& textarea:invalid{
 		background-color: hsl(var(--danger-hue) var(--danger-sat) calc(var(--danger-lig) + 25%)) !important;
-		outline-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig)) !important;
+		box-shadow: 0 0 0 2px hsl(var(--danger-hue) var(--danger-sat) var(--dark-danger));
 	}
 
 	& input:invalid:focus,
 	& textarea:invalid:focus {
-		outline-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig)) !important;
+		box-shadow: 0 0 0 2px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
 	}
 
 	& i{
@@ -226,6 +224,62 @@
 	& textarea:read-only:not(:disabled){
 		font-style: italic;
 	}
+}
+
+.field-med{
+
+	& input[type=color],
+	& input[type=date],
+	& input[type=datetime-local],
+	& input[type=month],
+	& input[type=email],
+	& input[type=file],
+	& input[type=password],
+	& input[type=search],
+	& input[type=time],
+	& input[type=url],
+	& input[type=week],
+	& input[type=number],
+	& input[type=text],
+	& input[type=tel],
+	& select{
+		font-size: calc(var(--font-size) * 1.15);
+		height: calc((var(--field-h) * 1.25));
+		padding: 0 calc(var(--pd) * 2);
+	}
+}
+
+.field-large{
+
+	& input[type=color],
+	& input[type=date],
+	& input[type=datetime-local],
+	& input[type=month],
+	& input[type=email],
+	& input[type=file],
+	& input[type=password],
+	& input[type=search],
+	& input[type=time],
+	& input[type=url],
+	& input[type=week],
+	& input[type=number],
+	& input[type=text],
+	& input[type=tel],
+	& select{
+		font-size: calc(var(--font-size) * 1.25);
+		height: calc((var(--field-h) * 1.55));
+		padding: 0 calc(var(--pd) * 2.2);
+	}
+}
+
+.field-join-left{
+	border-radius: 0 var(--rd) var(--rd) 0;
+}
+.field-join-right{
+	border-radius: var(--rd) 0 0 var(--rd);
+}
+.field-join{
+	border-radius: 0 0 0 0;
 }
 
 .toggle{

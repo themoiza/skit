@@ -71,6 +71,10 @@ class Modal{
 			}
 		});
 
+		if(zIndex <= 99){
+			zIndex = 99;
+		}
+
 		zIndex++;
 
 		return zIndex;

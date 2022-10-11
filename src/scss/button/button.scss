@@ -7,6 +7,7 @@
 	outline: none;
 	color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 	background-color: hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig)));
+	box-shadow: 0 0 0 1px hsl(var(--background-hue) var(--background-sat) calc(var(--background-lig)));
 	border-radius: var(--rd) var(--rd) var(--rd) var(--rd);
 	font-size: 0.85rem;
 	min-width: 1.1rem;
@@ -37,9 +38,16 @@
 	padding: 0 calc(var(--pd) * 2);
 }
 
+.btn-large{
+	font-size: calc(var(--font-size) * 1.25);
+	height: calc((var(--field-h) * 1.55));
+	padding: 0 calc(var(--pd) * 2.2);
+}
+
 .btn-pri{
 
 	background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+	box-shadow: 0 0 0 1px hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 
 	&:focus{
@@ -57,6 +65,7 @@
 
 	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 	background-color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
+	box-shadow: 0 0 0 1px hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
 
 	&:focus{
 		box-shadow: 0 0 0 2px hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig) / 50%);
@@ -73,6 +82,7 @@
 
 	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 	background-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
+	box-shadow: 0 0 0 1px hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
 
 	&:focus{
 		box-shadow: 0 0 0 2px hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig) / 50%);
@@ -89,6 +99,7 @@
 
 	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 	background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+	box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 
 	&:focus{
 		box-shadow: 0 0 0 2px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig) / 50%);
@@ -105,6 +116,7 @@
 
 	color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 	background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	box-shadow: 0 0 0 1px hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 
 	&:focus{
 		box-shadow: 0 0 0 2px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig) / 10%);
@@ -131,4 +143,14 @@
 	&:active{
 		box-shadow: 0 0 0 2px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig) / 60%);
 	}
+}
+
+.btn-join-left{
+	border-radius: 0 var(--rd) var(--rd) 0;
+}
+.btn-join-right{
+	border-radius: var(--rd) 0 0 var(--rd);
+}
+.btn-join{
+	border-radius: 0 0 0 0;
 }
