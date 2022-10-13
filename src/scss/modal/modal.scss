@@ -1,6 +1,5 @@
 .Modal{
-
-	margin: auto;
+	position: fixed;
 	padding: 0;
 	box-shadow: 0px 0px 5px 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig) / 10%);
 	border: none;
@@ -9,10 +8,9 @@
 	background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 	border-radius: var(--rd);
 	z-index: 11;
+	top: 0;
+	left: 0;
 	max-width: 40rem;
-	position: fixed;
-	top: 15rem;
-	transform: translate(0, 0);
 
 	& .TopBar{
 

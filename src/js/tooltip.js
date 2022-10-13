@@ -37,23 +37,23 @@ window.Tooltip = {
 
 			var position = e.target.getAttribute('data-title-position') ?? 'top';
 
-			var top = (rect.top - tip.clientHeight - 10).toFixed(0);
+			var top = (rect.top - tip.clientHeight - 15).toFixed(0);
 			var left = (rect.left+(rect.width / 2)-(tip.clientWidth / 2)).toFixed(0);
 
 			if(top < 5 || position == 'bottom'){
-				top = (rect.top + rect.height + 10).toFixed(0);
+				top = (rect.top + rect.height + 5).toFixed(0);
 				position = 'bottom';
 
 			}else if(position == 'right'){
-				top = (rect.top + (rect.height / 2) - 10).toFixed(0);
-				left = (rect.left + rect.width + 10).toFixed(0);
+				top = (rect.top + (rect.height / 2) - 15).toFixed(0);
+				left = (rect.left + rect.width + 15).toFixed(0);
 				position = 'right';
 			}else if(position == 'left'){
-				top = (rect.top + (rect.height / 2) - 10).toFixed(0);
-				left = (rect.left - (rect.width * 2) - 10).toFixed(0);
+				top = (rect.top + (rect.height / 2) - 15).toFixed(0);
+				left = (rect.left - (rect.width * 2) - 15).toFixed(0);
 				position = 'left';
 			}else{
-				var top = (rect.top - tip.clientHeight - 10).toFixed(0);
+				var top = (rect.top - tip.clientHeight - 15).toFixed(0);
 				position = 'top';
 			}
 
