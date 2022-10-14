@@ -26,8 +26,8 @@ class Modal{
 
 	setCenter(){
 
-		var viewX = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		var viewY = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		var viewX = document.documentElement.clientWidth || document.body.clientWidth;
+		var viewY = document.documentElement.clientHeight || document.body.clientHeight;
 
 		var rect = this.comp.getBoundingClientRect();
 
@@ -64,11 +64,39 @@ class Modal{
 			}
 		});
 
+		document.addEventListener('touchstart', (evt) => {
+
+			if(evt.target == this.move){
+
+				this._setZIndex(this._getZIndex());
+
+				this.canMove = true;
+
+				this.mouseX = evt.touches[0].pageX;
+				this.mouseY = evt.touches[0].pageY;
+
+				this.currentX = this.lastX;
+				this.currentY = this.lastY;
+
+				this.currentX = Number(this.comp.style.left.replace('px', ''));
+				this.currentY = Number(this.comp.style.top.replace('px', ''));
+
+				document.addEventListener('touchmove', this.handleMove);
+			}
+		});
+
 		document.addEventListener('mouseup', (evt) => {
 
 			this.canMove = false;
 
 			document.removeEventListener('mousemove', this.handleMove);
+		});
+
+		document.addEventListener('touchend', (evt) => {
+
+			this.canMove = false;
+
+			document.removeEventListener('touchmove', this.handleMove);
 		});
 	}
 
@@ -78,8 +106,11 @@ class Modal{
 
 			window.requestAnimationFrame(() => {
 
-				this.lastX = (this.currentX + evt.x - this.mouseX).toFixed(0)
-				this.lastY = (this.currentY + evt.y - this.mouseY).toFixed(0);
+				var evtX = evt.x ?? evt.touches[0].pageX;
+				var evtY = evt.y ?? evt.touches[0].pageY;
+
+				this.lastX = (this.currentX + evtX - this.mouseX).toFixed(0)
+				this.lastY = (this.currentY + evtY - this.mouseY).toFixed(0);
 
 				this.comp.style.left = this.lastX+'px';
 				this.comp.style.top = this.lastY+'px';
