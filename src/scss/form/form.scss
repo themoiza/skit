@@ -55,9 +55,6 @@
 		padding: var(--pd);
 		min-height: calc(var(--field-h) * 2);
 		tab-size: 1.5rem;
-		//outline-width: 1px;
-		//outline-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) - 30%));
-		//outline-style: solid;
 	}
 
 	& input[type=radio],

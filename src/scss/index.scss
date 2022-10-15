@@ -16,3 +16,12 @@
 @import 'tooltip/tooltip.scss';
 @import 'typography/typography.scss';
 @import 'warning/warning.scss';
+
+
+@media all and (max-width: 1023px){
+	.no-mob{
+		display: none !important;
+		position: absolute;
+		margin-left: -99999px;
+	}
+}

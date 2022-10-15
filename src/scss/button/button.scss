@@ -32,6 +32,12 @@
 	}
 }
 
+.btn-tiny{
+	font-size: calc(var(--font-size) * 0.65);
+	height: calc((var(--field-h) * 0.7));
+	padding: 0 calc(var(--pd));
+}
+
 .btn-med{
 	font-size: calc(var(--font-size) * 1.15);
 	height: calc((var(--field-h) * 1.25));
