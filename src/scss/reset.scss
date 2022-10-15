@@ -10,6 +10,10 @@
 }
 body{
 	background-color: hsl(var(--background-hue), var(--background-sat), calc(var(--background-lig) - 3%));
+    color: hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig));
+}
+p, h1, h2, h3, h4, h5, h6{
+    color: hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig));
 }
 
 .Img-block{

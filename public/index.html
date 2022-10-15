@@ -823,23 +823,6 @@
 		<script src="js/vue.min.js"></script>
 		<script>
 
-			window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-				var mode = e.matches ? Darkmode(true) : Darkmode(false);
-			});
-
-			window.Darkmode = (t) => {
-
-				if(t){
-					document.body.classList.add('DarkMode');
-					document.body.classList.remove('LightMode');
-				}else{
-					document.body.classList.remove('DarkMode');
-					document.body.classList.add('LightMode');
-				}
-			};
-
-			Darkmode(true);
-
 			window.ToogleDisabled = (id) => {
 
 				var f = document.getElementById(id);

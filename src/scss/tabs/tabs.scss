@@ -9,6 +9,8 @@
 	padding-top: 5px;
 	border: 1px solid hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 	border-radius: var(--radius) var(--radius) 0 0;
+	overflow-x: auto;
+    overflow-y: hidden;
 
 	& button{
 		appearance: none;
@@ -55,6 +57,7 @@
 	border: 1px solid hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 	border-radius: 0 0 var(--radius) var(--radius);
 	border-top: none;
+	overflow-x: auto;
 
 	& .active{
 		display: block;

@@ -10,7 +10,7 @@
 	z-index: 11;
 	top: 0;
 	left: 0;
-	max-width: 40rem;
+	max-width: calc(100vw - 1.6rem);
 
 	& .TopBar{
 

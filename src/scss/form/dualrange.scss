@@ -6,6 +6,7 @@
 		height: var(--field-h);
 		min-width: 3rem;
 		width: inherit;
+		touch-action: none;
 
 		&::before{
 			content: "";

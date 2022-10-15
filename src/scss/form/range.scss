@@ -15,6 +15,7 @@
 		min-width: 1rem;
 		outline: none;
 		cursor: pointer;
+		touch-action: none;
 		accent-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 	}
 
