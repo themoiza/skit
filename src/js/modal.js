@@ -183,4 +183,7 @@ class Modal{
 		this.comp.style.transform = null;
 		this.comp.style.zIndex = null;
 	}
+	done(fn){
+		fn();
+	}
 }
