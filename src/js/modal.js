@@ -11,6 +11,10 @@ class Modal{
 		this.mouseX = 0;
 		this.mouseY = 0;
 
+		this.calls = [];
+
+		this.data = new Object;
+
 		this.canMove = false;
 
 		this.comp = document.getElementById(id);
@@ -22,6 +26,25 @@ class Modal{
 		this.comp.addEventListener('click', () => {
 			this.setFocus();
 		});
+	}
+
+	setData(o){
+
+		if(typeof(o) === 'object'){
+
+			for(var index in o) {
+
+				this.data[index] = o[index];
+			};
+		}
+	}
+
+	unsetData(index){
+
+		if(typeof(this.data[index]) !== 'undefined'){
+
+			delete this.data[index];
+		}
 	}
 
 	setCenter(){
@@ -167,11 +190,15 @@ class Modal{
 
 	open(){
 
-		this.comp.show();
+		Debounce(() => {
+			this.comp.show();
 
-		this._setZIndex(this._getZIndex());
+			this.setCenter();
 
-		this.setCenter();
+			this._call();
+
+			this._setZIndex(this._getZIndex());
+		}, 50, 'modal');
 	}
 
 	close(){
@@ -183,7 +210,20 @@ class Modal{
 		this.comp.style.transform = null;
 		this.comp.style.zIndex = null;
 	}
+
+	_call(){
+
+		this.calls.forEach((call) => {
+
+			call();
+		});
+	}
+
 	done(fn){
-		fn();
+
+		if(typeof(fn) == 'function'){
+
+			this.calls.push(fn);
+		}
 	}
 }

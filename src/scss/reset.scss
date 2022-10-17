@@ -50,7 +50,7 @@ i[class^="fi-"]{
 }
 
 .spin::before{
-	animation: spin-animation 2s ease-in-out infinite;
+	animation: spin-animation 1.5s ease-in-out infinite;
 	transform-origin: center center;
 	display: inline-block;
 }

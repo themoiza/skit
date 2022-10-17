@@ -58,5 +58,8 @@
 		border-radius: 0 0 var(--rd) var(--rd);
 		border-top: 0;
 		background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+		overflow-y: auto;
+		overflow-x: auto;
+		max-height: calc(100vh - 7rem);
 	}
 }
