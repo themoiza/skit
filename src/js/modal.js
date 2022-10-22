@@ -1,6 +1,6 @@
 class Modal{
 
-	constructor(id){
+	constructor(id, opts){
 
 		this.currentX = 0;
 		this.currentY = 0;
@@ -15,9 +15,55 @@ class Modal{
 
 		this.data = new Object;
 
-		this.canMove = false;
+		// OPTIONS
+		this.options = {
+			'id': id,
+			'canMove': true,
+			'size': 'free',
+			'title': 'MODAL',
+			'html': ''
+		};
 
-		this.comp = document.getElementById(id);
+		if(opts){
+
+			if(opts.title){
+				this.options.title = opts.title.substring(0, 50);
+			}
+
+			if(typeof(opts.canMove) === 'boolean'){
+				this.options.canMove = opts.canMove;
+			}
+		}
+
+		this._canMove = false;
+
+		// EXIST DIALOG IN HTML
+		if(document.getElementById(id)){
+
+			this.comp = document.getElementById(id);
+
+		// CREATE NEW DIALOG
+		}else{
+
+			this.comp = document.createElement('dialog');
+			this.comp.classList.add('Modal');
+			this.comp.setAttribute('id', id);
+
+			document.body.appendChild(this.comp);
+
+			this.options.html = `
+				<div class="TopBar">
+					<div class="Move">`+this.options.title+`</div>
+					<div class="Close"><button data-skit="close">⨉</button></div>
+				</div>
+				<div class="ModalContent">
+					<div class="pd1">
+						<p>...<p>
+					</div>
+				</div>`;
+
+			this.comp.innerHTML = this.options.html;
+		}
 
 		this.move = this.comp.querySelector('.Move');
 
@@ -26,6 +72,13 @@ class Modal{
 		this.comp.addEventListener('click', () => {
 			this.setFocus();
 		});
+
+		if(this.comp.querySelector('[data-skit="close"]')){
+
+			this.comp.querySelector('[data-skit="close"]').addEventListener('click', (e) => {
+				this.close();
+			});
+		}
 	}
 
 	setData(o){
@@ -66,13 +119,19 @@ class Modal{
 
 	initMove(){
 
+		if(!this.options.canMove){
+
+			this.move.style.cursor = 'no-drop';
+			return false;
+		}
+
 		document.addEventListener('mousedown', (evt) => {
 
-			if(evt.target == this.move){
+			if(this.move && evt.target == this.move){
 
 				this._setZIndex(this._getZIndex());
 
-				this.canMove = true;
+				this._canMove = true;
 
 				this.mouseX = evt.x;
 				this.mouseY = evt.y;
@@ -89,11 +148,11 @@ class Modal{
 
 		document.addEventListener('touchstart', (evt) => {
 
-			if(evt.target == this.move){
+			if(this.move && evt.target == this.move){
 
 				this._setZIndex(this._getZIndex());
 
-				this.canMove = true;
+				this._canMove = true;
 
 				this.mouseX = evt.touches[0].pageX;
 				this.mouseY = evt.touches[0].pageY;
@@ -110,14 +169,14 @@ class Modal{
 
 		document.addEventListener('mouseup', (evt) => {
 
-			this.canMove = false;
+			this._canMove = false;
 
 			document.removeEventListener('mousemove', this.handleMove);
 		});
 
 		document.addEventListener('touchend', (evt) => {
 
-			this.canMove = false;
+			this._canMove = false;
 
 			document.removeEventListener('touchmove', this.handleMove);
 		});
@@ -125,7 +184,11 @@ class Modal{
 
 	handleMove = (evt) => {
 
-		if(this.canMove === true){
+		if(!this.options.canMove){
+			return false;
+		}
+
+		if(this._canMove === true){
 
 			window.requestAnimationFrame(() => {
 
@@ -174,8 +237,8 @@ class Modal{
 
 	setTitle(t){
 
-		this.title = t.substring(0, 50);
-		this.comp.querySelector('.Move').textContent = this.title;
+		this.options.title = t.substring(0, 50);
+		this.comp.querySelector('.Move').textContent = this.options.title;
 	}
 
 	setContent(h){

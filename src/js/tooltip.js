@@ -17,7 +17,7 @@ window.Tooltip = {
 				var randomId = 'tip'+(Math.random()*1000000).toFixed(0);
 
 				var div = document.createElement('div');
-				div.classList.add('tooltip');
+				div.classList.add('Tooltip');
 				div.setAttribute('id', randomId);
 				div.textContent = e.target.getAttribute('data-title');
 
@@ -42,26 +42,26 @@ window.Tooltip = {
 
 			if(top < 5 || position == 'bottom'){
 				top = (rect.top + rect.height + 5).toFixed(0);
-				position = 'bottom';
+				position = 'Bottom';
 
 			}else if(position == 'right'){
 				top = (rect.top + (rect.height / 2) - 15).toFixed(0);
 				left = (rect.left + rect.width + 15).toFixed(0);
-				position = 'right';
+				position = 'Right';
 			}else if(position == 'left'){
 				top = (rect.top + (rect.height / 2) - 15).toFixed(0);
 				left = (rect.left - (rect.width * 2) - 15).toFixed(0);
-				position = 'left';
+				position = 'Left';
 			}else{
 				var top = (rect.top - tip.clientHeight - 15).toFixed(0);
-				position = 'top';
+				position = 'Top';
 			}
 
-			tip.classList.remove('tooltip-top');
-			tip.classList.remove('tooltip-left');
-			tip.classList.remove('tooltip-right');
-			tip.classList.remove('tooltip-bottom');
-			tip.classList.add('tooltip-'+position);
+			tip.classList.remove('TooltipTop');
+			tip.classList.remove('TooltipLeft');
+			tip.classList.remove('TooltipRight');
+			tip.classList.remove('TooltipBottom');
+			tip.classList.add('Tooltip'+position);
 
 			if(tip.getAttribute('data-apply') == null){
 
@@ -76,7 +76,7 @@ window.Tooltip = {
 				tip.style.left = left+'px';
 
 				tip.setAttribute('data-apply', 'true');
-				tip.classList.add('tooltip-active');
+				tip.classList.add('TooltipActive');
 			}
 		}else{
 
@@ -90,7 +90,7 @@ window.Tooltip = {
 
 				var tt = document.getElementById(x);
 				tt.removeAttribute('data-apply');
-				tt.classList.remove('tooltip-active');
+				tt.classList.remove('TooltipActive');
 				delete toolTips[x];
 			}
 		}

@@ -1,69 +1,69 @@
-.flex{
+.Flex{
 	display: flex;
 	flex-wrap: wrap;
     flex-direction: row;
 }
-.flex-vcenter{
+.FlexVcenter{
 	align-items: center;
 }
-.flex-space-between{
+.FlexSpaceBetween{
 	justify-content: space-between;
 }
-.col-flex{
+.ColFlex{
 	flex: 0 0 auto;
 	width: 100%;
 }
-.col-flex-auto{
+.ColFlexAuto{
 	flex: 0 0 auto;
 	width: auto;
 }
-.col-flex-1{
+.ColFlex1{
 	width: 8.3333%;
 }
-.col-flex-2{
+.ColFlex2{
 	width: 16.6666%;
 }
-.col-flex-3{
+.ColFlex3{
 	width: 25%;
 }
-.col-flex-4{
+.ColFlex4{
 	width: 33.3333%;
 }
-.col-flex-5{
+.ColFlex5{
 	width: 41.6666%;
 }
-.col-flex-6{
+.ColFlex6{
 	width: 50%;
 }
-.col-flex-7{
+.ColFlex7{
 	width: 58.3333%;
 }
-.col-flex-8{
+.ColFlex8{
 	width: 66.6666%;
 }
-.col-flex-9{
+.ColFlex9{
 	width: 75%;
 }
-.col-flex-10{
+.ColFlex10{
 	width: 83.3333%;
 }
-.col-flex-11{
+.ColFlex11{
 	width: 91.6666%;
 }
-.col-flex-11{
+.ColFlex12{
 	width: 100%;
 }
 
-@mixin calc(){
+@mixin MixinCalc(){
 
 	$i: 5;
 	@while $i <= 1920 {
 
-		.col-flex-#{$i}px {
+		.ColFlex#{$i}px {
 			width: #{$i}px !important;
 		}
 
-		.col-flex-calc-#{$i} {
+		.ColFlexCalc#{$i} {
 			width: calc(100% - #{$i}px) !important;
 		}
 
@@ -71,7 +71,7 @@
 	}
 }
 
-@mixin widthP{
+@mixin MixinMidthP{
 
 	$i: 1;
 	$value: 1%;
@@ -103,7 +103,7 @@
 	}
 }
 
-@mixin widthPX{
+@mixin MixinWidthPX{
 
 	$i: 1;
 
@@ -116,7 +116,7 @@
 	}
 }
 
-@mixin mgPd{
+@mixin MixinMgPd{
 
 	$i: 1;
 	@while $i <= 5 {
@@ -170,7 +170,7 @@
 	}
 }
 
-@include calc;
-@include widthP;
-@include widthPX;
-@include mgPd;
+@include MixinCalc;
+@include MixinMidthP;
+@include MixinWidthPX;
+@include MixinMgPd;

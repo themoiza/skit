@@ -31,7 +31,18 @@ p, h1, h2, h3, h4, h5, h6{
 	overflow: auto;
 }
 
-.no-select {
+i[class^="fi-"]{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.Spin::before{
+	animation: AnimationSpin 1.5s ease-in-out infinite;
+	transform-origin: center center;
+	display: inline-block;
+}
+
+.NoSelect {
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -39,23 +50,12 @@ p, h1, h2, h3, h4, h5, h6{
 	-o-user-select: none;
 }
 
-.No-scroll{
+.NoScroll{
 	overflow: hidden;
 	padding-right: 0.5rem;
 }
 
-i[class^="fi-"]{
-	display: inline-block;
-	vertical-align: top;
-}
-
-.spin::before{
-	animation: spin-animation 1.5s ease-in-out infinite;
-	transform-origin: center center;
-	display: inline-block;
-}
-
-@keyframes spin-animation { 
+@keyframes AnimationSpin { 
 	from { 
 		transform: rotate(0deg); 
 	} 

@@ -133,16 +133,16 @@ hr{
 	margin: 0;
 	padding: 0;
 }
-.content {
+.Content {
 	padding: 2rem;
 	box-sizing: border-box;
 }
 
-.content .left {
+.Content .left {
 	width: 320px;
 }
 
-.content .right {
+.Content .right {
 	padding: 10px 0;
 	width: calc(100% - 320px);
 	font-size: 15px;

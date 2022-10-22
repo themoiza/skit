@@ -1,61 +1,25 @@
-.grid{
+.Grid{
 	display: grid;
 	grid-template-columns: repeat(60, 1fr);
 	gap: 1.5rem;
 }
-.grid-vcenter{
+.GridVcenter{
 	align-items: center;
 }
-.grid-valign-bottom{
+.GridValignBottom{
 	align-items: end;
 }
-.col-grid-1{
-	grid-column: span 1;
-}
-.col-grid-2{
-	grid-column: span 2;
-}
-.col-grid-3{
-	grid-column: span 3;
-}
-.col-grid-4{
-	grid-column: span 4;
-}
-.col-grid-5{
-	grid-column: span 5;
-}
-.col-grid-6{
-	grid-column: span 6;
-}
-.col-grid-7{
-	grid-column: span 7;
-}
-.col-grid-8{
-	grid-column: span 8;
-}
-.col-grid-9{
-	grid-column: span 9;
-}
-.col-grid-10{
-	grid-column: span 10;
-}
-.col-grid-11{
-	grid-column: span 11;
-}
-.col-grid-11{
-	grid-column: span 12;
-}
 
-@mixin colGrid(){
+@mixin MixinColGrid(){
 
 	$i: 1;
 	@while $i <= 60 {
 
-		.col-grid-#{$i} {
+		.ColGrid#{$i} {
 			grid-column: span #{$i};
 		}
 		$i: $i + 1;
 	}
 }
 
-@include colGrid;
+@include MixinColGrid;

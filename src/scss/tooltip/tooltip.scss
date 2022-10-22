@@ -1,5 +1,5 @@
 /* TOOLTIP */
-.tooltip{
+.Tooltip{
 	display: block;
 	position: fixed;
 	pointer-events: none;
@@ -18,7 +18,7 @@
 	border-radius: var(--rd);
 	transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
 }
-.tooltip::after{
+.Tooltip::after{
 	--triangle-size: 0.75rem;
 	content: "";
 	display: block;
@@ -32,14 +32,14 @@
 	border-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig)) transparent transparent transparent;
 	filter: drop-shadow(0px 2px 1px rgba(0,0,0,0.1));
 }
-.tooltip-top::after{
+.TooltipTop::after{
 	left: 50%;
 	bottom: 0;
 	transform: translate(calc(var(--triangle-size) * -1), calc(var(--triangle-size) + 1px));
 	border-width: var(--triangle-size) var(--triangle-size) 0 var(--triangle-size);
 	border-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig)) transparent transparent transparent;
 }
-.tooltip-bottom::after{
+.TooltipBottom::after{
 	left: 50%;
 	top: 0;
 	transform: translate(calc(var(--triangle-size) * -1), calc(var(--triangle-size) * -1 - 2px));
@@ -47,7 +47,7 @@
 	border-color: transparent transparent hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig)) transparent;
 	filter: drop-shadow(0px -2px 1px rgba(0,0,0,0.1));
 }
-.tooltip-left::after{
+.TooltipLeft::after{
 	right: 0;
 	top: 50%;
 	transform: translate(calc(var(--triangle-size) * 1 + 2px), calc(var(--triangle-size) * -1));
@@ -55,7 +55,7 @@
 	border-color: transparent transparent transparent hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 	filter: drop-shadow(2px 0px 1px rgba(0,0,0,0.1));
 }
-.tooltip-right::after{
+.TooltipRight::after{
 	left: 0;
 	top: 50%;
 	transform: translate(calc(var(--triangle-size) * -1), calc(var(--triangle-size) * -1 - 1px));
@@ -64,7 +64,7 @@
 	filter: drop-shadow(-4px 0px 1px rgba(0,0,0,0.1));
 }
 
-.tooltip-active{
+.TooltipActive{
 	transform: scale(1);
 	z-index: 5;
 	opacity: 1;

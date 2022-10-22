@@ -4,26 +4,26 @@ window.Confirm = function(obj){
 
 		let message = '';
 		if(obj.message){
-			message = `<div class="Confirm-message">`+obj.message+`</div>`;
+			message = `<div class="ConfirmMessage">`+obj.message+`</div>`;
 		}
 
 		let mask = `
-			<div class="Confirm no-select">
-				<div class="Confirm-title">`+obj.title+`</div>
+			<div class="Confirm NoSelect">
+				<div class="ConfirmTitle">`+obj.title+`</div>
 				`+message+`
 			</div>
-			<div class="Confirm-actions">
+			<div class="ConfirmActions">
 				<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button>
 			</div>`;
 
 		if(obj.no !== false){
 
 			mask = `
-				<div class="Confirm no-select">
-					<div class="Confirm-title">`+obj.title+`</div>
+				<div class="Confirm NoSelect">
+					<div class="ConfirmTitle">`+obj.title+`</div>
 					`+message+`
 				</div>
-				<div class="Confirm-actions">
+				<div class="ConfirmActions">
 					<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button> <button id="Confirm-no" class="`+obj.noclass+`">`+obj.no+`</button> 
 				</div>`;
 		}
@@ -39,7 +39,7 @@ window.Confirm = function(obj){
 		}
 
 		document.getElementById('Confirm').showModal();
-		document.body.classList.add('No-scroll');
+		document.body.classList.add('NoScroll');
 
 		if(document.getElementById('Confirm-ok')){
 			document.getElementById('Confirm-ok').focus();
@@ -50,7 +50,7 @@ window.Confirm = function(obj){
 			if(div === e.target){
 
 				document.getElementById('Confirm').close();
-				document.body.classList.remove('No-scroll');
+				document.body.classList.remove('NoScroll');
 
 				if(obj.cancelFn){
 					obj.cancelFn();
@@ -61,7 +61,7 @@ window.Confirm = function(obj){
 		document.getElementById('Confirm-ok').addEventListener('click', (e) => {
 
 			document.getElementById('Confirm').close();
-			document.body.classList.remove('No-scroll');
+			document.body.classList.remove('NoScroll');
 
 			if(obj.okFn){
 				obj.okFn();
@@ -73,7 +73,7 @@ window.Confirm = function(obj){
 			if(e.keyCode == 13){
 
 				document.getElementById('Confirm').close();
-				document.body.classList.remove('No-scroll');
+				document.body.classList.remove('NoScroll');
 
 				if(obj.okFn){
 					obj.okFn();
@@ -84,7 +84,7 @@ window.Confirm = function(obj){
 		document.getElementById('Confirm-no').addEventListener('click', (e) => {
 
 			document.getElementById('Confirm').close();
-			document.body.classList.remove('No-scroll');
+			document.body.classList.remove('NoScroll');
 
 			if(obj.noFn){
 				obj.noFn();
@@ -96,7 +96,7 @@ window.Confirm = function(obj){
 			if(e.keyCode == 13){
 
 				document.getElementById('Confirm').close();
-				document.body.classList.remove('No-scroll');
+				document.body.classList.remove('NoScroll');
 				obj.noFn();
 			}
 		});

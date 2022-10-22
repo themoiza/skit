@@ -11,9 +11,9 @@
 	-ms-user-select: none;
 	-o-user-select: none;
 
-	& .Warning-canvas{
+	& .WarningCanvas{
 
-		animation: flip 0.15s alternate ease-out;
+		animation: AnimationFlip 0.15s alternate ease-out;
 		backface-visibility: hidden;
 
 		& .Warning{
@@ -35,13 +35,13 @@
 			-ms-box-sizing: border-box;
 			-o-box-sizing: border-box;
 
-			& .title{
+			& .WarningTitle{
 				font-size: 0.9rem;
 				line-height: 1.5rem;
 				font-weight: bold;
 			}
 
-			& .Warning-close{
+			& .WarningClose{
 				cursor: pointer;
 				outline: none;
 				border: none;
@@ -71,17 +71,17 @@
 				position: absolute;
 				left: 0;
 				bottom: 0;
-				animation: closeProgress alternate forwards ease-in-out;
+				animation: AnimationCloseProgress alternate forwards ease-in-out;
 				animation-duration: inherit;
 			}
 		}
 
-		& .Warning-danger{
+		& .WarningDanger{
 
 			color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 			background-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
 
-			& .Warning-close{
+			& .WarningClose{
 				color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 				background-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
 
@@ -92,12 +92,12 @@
 			}
 		}
 
-		& .Warning-pri{
+		& .WarningPri{
 
 			color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 			background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 
-			& .Warning-close{
+			& .WarningClose{
 				color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 				background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 
@@ -108,12 +108,12 @@
 			}
 		}
 
-		& .Warning-sec{
+		& .WarningSec{
 
 			color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 			background-color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
 
-			& .Warning-close{
+			& .WarningClose{
 				color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 				background-color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
 
@@ -124,12 +124,12 @@
 			}
 		}
 
-		& .Warning-dark{
+		& .WarningDark{
 
 			color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 			background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 
-			& .Warning-close{
+			& .WarningClose{
 				color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 				background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 
@@ -144,12 +144,12 @@
 			}
 		}
 
-		& .Warning-light{
+		& .WarningLight{
 
 			color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 			background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 
-			& .Warning-close{
+			& .WarningClose{
 
 				color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 				background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
@@ -163,51 +163,51 @@
 	}
 }
 
-.Warning-Left-Bottom{
+.WarningLeftBottom{
 	bottom: 0;
 	left: 1rem;
 }
 
-.Warning-Center-Bottom{
+.WarningCenterBottom{
 	bottom: 0;
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-.Warning-Right-Bottom{
+.WarningRightBottom{
 	bottom: 0;
 	right: 1rem;
 }
 
-.Warning-Left-Center{
+.WarningLeftCenter{
 	top: 50%;
 	left: 1rem;
 	transform: translateY(-50%);
 }
 
-.Warning-Right-Center{
+.WarningRightCenter{
 	top: 50%;
 	right: 1rem;
 	transform: translateY(-50%);
 }
 
-.Warning-Left-Top{
+.WarningLeftTop{
 	top: 0;
 	left: 1rem;
 }
 
-.Warning-Center-Top{
+.WarningCenterTop{
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-.Warning-Right-Top{
+.WarningRightTop{
 	top: 0;
 	right: 1rem;
 }
 
-@keyframes closeProgress {
+@keyframes AnimationCloseProgress {
 	from {
 		width: 100%;
 	}
@@ -216,7 +216,7 @@
 	}
 }
 
-@keyframes flip{
+@keyframes AnimationFlip{
 	0% {
 		transform: scale(0.5) translateY(-100%) perspective(100vw) rotateX(90deg);
 	} 50% { 

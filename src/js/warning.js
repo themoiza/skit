@@ -20,14 +20,14 @@ window.Warning = (obj) => {
 
 	var colors = ['danger', 'pri', 'sec', 'dark', 'light'];
 	var positions = {
-		1: 'Warning-Left-Bottom',
-		2: 'Warning-Center-Bottom',
-		3: 'Warning-Right-Bottom',
-		4: 'Warning-Left-Center',
-		6: 'Warning-Right-Center',
-		7: 'Warning-Left-Top',
-		8: 'Warning-Center-Top',
-		9: 'Warning-Right-Top'
+		1: 'WarningLeftBottom',
+		2: 'WarningCenterBottom',
+		3: 'WarningRightBottom',
+		4: 'WarningLeftCenter',
+		6: 'WarningRightCenter',
+		7: 'WarningLeftTop',
+		8: 'WarningCenterTop',
+		9: 'WarningRightTop'
 	};
 
 	var warnLimit = 5;
@@ -46,7 +46,10 @@ window.Warning = (obj) => {
 		// VALIDATE COLORS
 		if(colors.includes(color)){
 
-			color = 'Warning-'+colors[colors.indexOf(color)];
+			var cl = colors[colors.indexOf(color)];
+			cl = cl.charAt(0).toUpperCase() + cl.slice(1);
+
+			color = 'Warning'+cl;
 
 		// NOT VALID COLORS
 		}else{
@@ -67,10 +70,10 @@ window.Warning = (obj) => {
 
 		var mask = `<div style="animation-duration: `+timeout+`ms" class="Warning `+color+`" data-id="`+id+`">
 				<div>
-					<div class="title">`+title+`</div>
+					<div class="WarningTitle">`+title+`</div>
 					<div>`+message+`</div>
 				</div>
-				<div><button class="Warning-close">⨉</button></div>
+				<div><button class="WarningClose">⨉</button></div>
 			</div>`;
 
 		// WARNING EXISTS
@@ -106,7 +109,7 @@ window.Warning = (obj) => {
 		}
 
 		/* REMOVE EMPTY CANVAS */
-		var removes = warn.querySelectorAll('.Warning-canvas');
+		var removes = warn.querySelectorAll('.WarningCanvas');
 		removes.forEach(function(el){
 
 			if(el.innerHTML == ''){
@@ -126,7 +129,7 @@ window.Warning = (obj) => {
 			if(totalCanvas.length < warnLimit){
 
 				var warnLine = document.createElement('div');
-				warnLine.setAttribute('class', 'Warning-canvas');
+				warnLine.setAttribute('class', 'WarningCanvas');
 				warnLine.innerHTML = mask;
 
 				warn.appendChild(warnLine);
@@ -151,10 +154,10 @@ window.Warning = (obj) => {
 			warnLine.setAttribute('class', `Warning `+color);
 
 			warnLine.innerHTML = `<div>
-					<div class="title">`+title+`</div>
+					<div class="WarningTitle">`+title+`</div>
 					<div>`+message+`</div>
 				</div>
-				<div><button class="Warning-close">⨉</button></div>`;
+				<div><button class="WarningClose">⨉</button></div>`;
 		}
 	}
 };

@@ -1,9 +1,28 @@
-.tx-left{
+.TxLeft{
     text-align: left;
 }
-.tx-right{
+.TxRight{
     text-align: right;
 }
-.tx-center{
+.TxCenter{
     text-align: center;
+}
+.TxJustify{
+    text-align: justify;
+}
+
+.TxPri{
+	color: hsl(var(--pri-hue), var(--pri-sat), var(--pri-lig));
+}
+
+.TxSec{
+	color: hsl(var(--sec-hue), var(--sec-sat), var(--sec-lig));
+}
+
+.TxDanger{
+	color: hsl(var(--danger-hue), var(--danger-sat), var(--danger-lig));
+}
+
+.TxGrey{
+	color: hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig-soft));
 }

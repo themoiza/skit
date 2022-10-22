@@ -16,7 +16,7 @@ class Tabs{
 		this.vue = new Vue({
 			el: '#'+this.id,
 			template: `
-				<div class="Tabs-btns">
+				<div class="TabsBtns">
 					<div v-for="(t, i) in tabs" :class="t.active"><button type="button" @click="setTab(i)" v-html="t.tab"></button></div>
 				</div>`,
 			data: {
@@ -71,13 +71,13 @@ class Tabs{
 
 				if(index == dv.getAttribute('data-tab')){
 
-					dv.classList.remove('inactive');
-					dv.classList.add('active');
+					dv.classList.remove('TabsInactive');
+					dv.classList.add('TabsActive');
 
 				}else{
 
-					dv.classList.add('inactive');
-					dv.classList.remove('active');
+					dv.classList.add('TabsInactive');
+					dv.classList.remove('TabsActive');
 				}
 			}
 		}
