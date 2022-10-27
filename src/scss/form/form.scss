@@ -33,21 +33,74 @@
 		padding: 0 var(--pd);
 		font-family: var(--font-family);
 		font-size: var(--font-size);
-		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-		box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+		background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+		box-shadow: 0 0 0 1px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 		border-radius: var(--rd);
 		width: inherit;
 		height: var(--field-h);
 		min-width: 1rem;
 	}
 
+	& input[type=date],
+	& input[type=datetime-local],
+	& input[type=month],
+	& input[type=week]{
+		background-image: var(--calendar-picker);
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-position-x: calc(100% - 0.25rem);
+		background-size: 0.8rem 0.8rem;
+	}
+
+	& input[type=time]{
+		background-image: var(--clock-picker);
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-position-x: calc(100% - 0.25rem);
+		background-size: 0.8rem 0.8rem;
+	}
+
+	& input[type=number]::-webkit-inner-spin-button{
+		opacity: 0.5;
+	}
+
+	& input[type=date]::-webkit-calendar-picker-indicator,
+	& input[type=datetime-local]::-webkit-calendar-picker-indicator,
+	& input[type=month]::-webkit-calendar-picker-indicator,
+	& input[type=week]::-webkit-calendar-picker-indicator,
+	& input[type=time]::-webkit-calendar-picker-indicator{
+		display: none;
+	}
+
+	& select{
+		padding: 0 calc(var(--pd) * 3) 0 var(--pd);
+
+		appearance: none;
+		background-image: var(--chevron-down);
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-position-x: calc(100% - 0.25rem);
+
+		&:focus{
+			background-image: var(--chevron-up);
+		}
+	}
+
+	& input[type=search]{
+		background-image: var(--mag-glass);
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-position-x: calc(100% - 0.25rem);
+		background-size: 0.8rem 0.8rem;
+	}
+
 	& textarea{
 		font-family: var(--font-family);
 		font-size: var(--font-size);
-		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-		background-color: hsl(var(--light-hue) var(--light-sat) calc(var(--light-lig) + 10%));
-		box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+		background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+		box-shadow: 0 0 0 1px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 		border-radius: var(--rd);
 		width: 100%;
 		border: none;
@@ -153,7 +206,7 @@
 	& input::placeholder,
 	& textarea::placeholder{
 		opacity: .5;
-		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 	}
 
 	& input[type=color]:focus,
@@ -172,7 +225,7 @@
 	& input[type=tel]:focus,
 	& select:focus,
 	& textarea:focus{
-		box-shadow: 0 0 0 2px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+		box-shadow: 0 0 0 2px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 	}
 
 	& input:invalid,
@@ -183,7 +236,7 @@
 
 	& input:invalid:focus,
 	& textarea:invalid:focus {
-		box-shadow: 0 0 0 2px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+		box-shadow: 0 0 0 2px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 	}
 
 	& i{

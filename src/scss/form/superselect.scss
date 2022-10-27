@@ -2,8 +2,8 @@
 	display: block;
 	border: none;
 	outline: none;
-	background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-	box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+	background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+	box-shadow: 0 0 0 1px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
 	border-radius: var(--rd);
 	width: inherit;
 	height: var(--field-h);
@@ -13,11 +13,18 @@
 	&:focus,
 	&:focus-within,
 	&:focus-visible{
-		box-shadow: 0 0 0 2px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+		box-shadow: 0 0 0 2px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
+		border-radius: var(--rd) var(--rd) 0 0;
 	}
 
 	&:focus-within .SuperSelectComp{
 		display: block;
+		box-shadow: 0 2px 0 2px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
+	}
+
+	&:focus .SuperSelectLabel,
+	&:focus-within .SuperSelectLabel{
+		background-image: var(--chevron-up);
 	}
 
 	& .SuperSelectLabel{
@@ -28,32 +35,59 @@
 		padding: 0 var(--pd);
 		font-family: var(--font-family);
 		font-size: var(--font-size);
-		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
 		user-select: none;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
 		-o-user-select: none;
+
+		background-image: var(--chevron-down);
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-position-x: calc(100% - 0.25rem);
 	}
 
 	& .SuperSelectComp{
 		display: none;
 		position: absolute;
 		width: inherit;
-		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+		background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 		box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
-		border-radius: var(--rd);
+		border-radius: 0 0 var(--rd) var(--rd);
+		z-index: 1;
 
 		& label{
 			cursor: pointer;
 			font-size: 0.85rem;
+			display: block;
+			width: 100%;
+			padding: calc(var(--pd) / 2) var(--pd);
+			color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
 		}
 
 		& .SuperSelectSearch{
 			display: block;
 			width: 100%;
 			padding: var(--pd);
+
+			& input{
+				background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+				color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+				box-shadow: 0 0 0 1px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig-soft));
+				background-image: var(--mag-glass);
+				background-repeat: no-repeat;
+				background-position: right center;
+				background-position-x: calc(100% - 0.25rem);
+				background-size: 0.8rem 0.8rem;
+			}
 		}
 
 		& .SuperSelectList{
@@ -62,13 +96,84 @@
 			padding: var(--pd);
 			overflow-y: auto;
 			overflow-x: hidden;
-			min-height: calc(var(--field-h) * 3);
-			max-height: calc(100vh - 10rem);
+			min-height: var(--field-h);
+			max-height: calc(80vh - 10rem);
 
-			& div{
-				padding: calc(var(--pd) / 2) 0;
+			& .SuperSelectGroup{
+				display: block;
+				width: 100%;
+
+				& .SuperSelectGroupTitle{
+					display: block;
+					width: 100%;
+					padding: calc(var(--pd) / 2) var(--pd);
+					color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+					background-color: rgba(0,0,0,0.05);
+					font-weight: bold;
+					cursor: default;
+					font-size: 0.85rem;
+					user-select: none;
+					-webkit-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					-o-user-select: none;
+				}
+
+				& .Option{
+					margin-left: var(--pd);
+				}
+			}
+
+			& .Option{
+
+				& input{
+					display: block;
+					width: 100%;
+					position: relative;
+					pointer-events: none;
+					cursor: default;
+					height: 1px;
+					width: 1px;
+					z-index: -1;
+					opacity: 0;
+
+					&:disabled + label{
+						opacity: 0.5;
+						cursor: not-allowed;
+					}
+
+					&:hover:not(:disabled) + label{
+						color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+						background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+					}
+
+					&:checked + label{
+						font-weight: bold !important;
+						color: hsl(var(--light-hue) var(--light-sat) var(--light-lig)) !important;
+						background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig)) !important;
+					}
+				}
 			}
 		}
+	}
+}
+
+.SuperSelectMed{
+	height: calc((var(--field-h) * 1.25));
+	& .SuperSelectLabel{
+		line-height: calc((var(--field-h) * 1.25));
+		padding: 0 calc(var(--pd) * 2);
+		font-size: calc(var(--font-size) * 1.15);
+	}
+}
+
+.SuperSelectLarge{
+
+	height: calc((var(--field-h) * 1.55));
+	& .SuperSelectLabel{
+		line-height: calc((var(--field-h) * 1.55));
+		padding: 0 calc(var(--pd) * 2.2);
+		font-size: calc(var(--font-size) * 1.25);
 	}
 }
 
