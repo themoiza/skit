@@ -11,6 +11,8 @@ class Modal{
 		this.mouseX = 0;
 		this.mouseY = 0;
 
+		this._centered = false;
+
 		this.calls = [];
 
 		this.data = new Object;
@@ -115,6 +117,8 @@ class Modal{
 
 		this.comp.style.left = this.currentX+'px';
 		this.comp.style.top = this.currentY+'px';
+
+		this._centered = true;
 	}
 
 	initMove(){
@@ -254,9 +258,12 @@ class Modal{
 	open(){
 
 		Debounce(() => {
+
 			this.comp.show();
 
-			this.setCenter();
+			if(this._centered === false){
+				this.setCenter();
+			}
 
 			this._call();
 
@@ -272,6 +279,8 @@ class Modal{
 		this.currentY = 0;
 		this.comp.style.transform = null;
 		this.comp.style.zIndex = null;
+
+		this._centered = false;
 	}
 
 	_call(){

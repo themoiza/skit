@@ -1,0 +1,80 @@
+.SuperSelect{
+	display: block;
+	border: none;
+	outline: none;
+	background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+	border-radius: var(--rd);
+	width: inherit;
+	height: var(--field-h);
+	min-width: 1rem;
+	position: relative;
+
+	&:focus,
+	&:focus-within,
+	&:focus-visible{
+		box-shadow: 0 0 0 2px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+	}
+
+	&:focus-within .SuperSelectComp{
+		display: block;
+	}
+
+	& .SuperSelectLabel{
+		display: block;
+		width: inherit;
+		height: inherit;
+		line-height: var(--field-h);
+		padding: 0 var(--pd);
+		font-family: var(--font-family);
+		font-size: var(--font-size);
+		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
+		cursor: pointer;
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+	}
+
+	& .SuperSelectComp{
+		display: none;
+		position: absolute;
+		width: inherit;
+		background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+		box-shadow: 0 0 0 1px hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig-soft));
+		border-radius: var(--rd);
+
+		& label{
+			cursor: pointer;
+			font-size: 0.85rem;
+		}
+
+		& .SuperSelectSearch{
+			display: block;
+			width: 100%;
+			padding: var(--pd);
+		}
+
+		& .SuperSelectList{
+			display: block;
+			width: 100%;
+			padding: var(--pd);
+			overflow-y: auto;
+			overflow-x: hidden;
+			min-height: calc(var(--field-h) * 3);
+			max-height: calc(100vh - 10rem);
+
+			& div{
+				padding: calc(var(--pd) / 2) 0;
+			}
+		}
+	}
+}
+
+.SuperSelectOpen{
+
+	& .SuperSelectComp{
+		display: block;
+	}
+}

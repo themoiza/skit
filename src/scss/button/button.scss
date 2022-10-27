@@ -13,6 +13,7 @@
 	min-width: 1.1rem;
 	width: auto;
 	height: var(--field-h);
+	line-height: var(--field-h);
 	padding: 0 var(--pd);
 	vertical-align: middle;
 
@@ -159,4 +160,8 @@
 }
 .BtnJoin{
 	border-radius: 0 0 0 0;
+}
+
+.Btn i:before{
+	line-height: inherit !important;
 }

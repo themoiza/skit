@@ -57,8 +57,8 @@
 		tab-size: 1.5rem;
 	}
 
-	& input[type=radio],
-	& input[type=checkbox]{
+	& .Radio,
+	& .Checkbox{
 		appearance: none;
 		cursor: pointer;
 		border: none;
@@ -68,8 +68,8 @@
 		position: relative;
 	}
 
-	& input[type=radio]::before,
-	& input[type=checkbox]::before{
+	& .Radio::before,
+	& .Checkbox::before{
 		color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 		position: absolute;
 		top: 0;
@@ -79,28 +79,28 @@
 		font-size: var(--field-h);
 	}
 
-	& input[type=radio]::before{
+	& .Radio::before{
 		content: "○"; /*○●*/
 	}
 
-	& input[type=checkbox]::before{
+	& .Checkbox::before{
 		content: "□"; /*□▣*/
 	}
 
-	& input[type=radio]:checked:before{
+	& .Radio:checked:before{
 		content: "●";
 	}
 
-	& input[type=checkbox]:checked::before{
+	& .Checkbox:checked::before{
 		content: "▣";
 	}
 
-	& input[type=checkbox]:indeterminate::before{
+	& .Checkbox:indeterminate::before{
 		content: "⊟";
 	}
 
-	& input[type=radio] + label,
-	& input[type=checkbox] + label{
+	& .Radio + label,
+	& .Checkbox + label{
 		display: inline-block;
 		vertical-align: middle;
 		font-weight: bold;
@@ -208,10 +208,10 @@
 	& input[type=tel]:disabled,
 	& select:disabled,
 	& textarea:disabled,
-	& input[type=radio]:disabled,
-	& input[type=checkbox]:disabled,
-	& input[type=radio]:disabled + label,
-	& input[type=checkbox]:disabled + label{
+	& .Radio:disabled,
+	& .Checkbox:disabled,
+	& .Radio:disabled + label,
+	& .Checkbox:disabled + label{
 		opacity: 0.5;
 		cursor: not-allowed;
 		filter: grayscale(0.5);
@@ -287,7 +287,7 @@
 	min-width: 4rem;
 	height: var(--field-h);
 
-	& input[type=checkbox]{
+	& .Checkbox{
 
 		cursor: pointer;
 		border: none;	
@@ -329,7 +329,7 @@
 		}
 	}
 
-	& input[type=checkbox] + label{
+	& .Checkbox + label{
 		margin-left: 3rem;
 	}
 }
@@ -343,3 +343,4 @@
 @import 'form/thumb.scss';
 @import 'form/dualrange.scss';
 @import 'form/range.scss';
+@import 'form/superselect.scss';
