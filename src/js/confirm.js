@@ -103,7 +103,6 @@ window.Confirm = function(obj){
 	}
 };
 
-
 window.Copy = {
 
 	id: (id) => {
