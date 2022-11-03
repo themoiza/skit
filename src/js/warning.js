@@ -73,7 +73,7 @@ window.Warning = (obj) => {
 					<div class="WarningTitle">`+title+`</div>
 					<div>`+message+`</div>
 				</div>
-				<div><button class="WarningClose">⨉</button></div>
+				<div><button class="WarningClose"></button></div>
 			</div>`;
 
 		// WARNING EXISTS
@@ -157,7 +157,7 @@ window.Warning = (obj) => {
 					<div class="WarningTitle">`+title+`</div>
 					<div>`+message+`</div>
 				</div>
-				<div><button class="WarningClose">⨉</button></div>`;
+				<div><button class="WarningClose"></button></div>`;
 		}
 	}
 };

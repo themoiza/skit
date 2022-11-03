@@ -22,8 +22,8 @@
 			align-items: flex-start;
 			justify-content: space-between;
 			font-size: 0.75rem;
-			color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
-			background-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+			color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+			background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 			margin: 0.5rem auto;
 			width: 100%;
 			padding: var(--pd);
@@ -48,17 +48,13 @@
 				border-radius: 50%;
 				width: 1.8rem;
 				height: 1.8rem;
-				line-height: 1.5rem;
-				font-size: 1.3rem;
 				padding: 0 !important;
 				margin: 0;
-				color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
-				background-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
-
-				&:hover{
-					color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
-					background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
-				}
+				background-color: transparent;
+				background-image: var(--close-x);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 1.8rem 1.8rem;
 			}
 
 			&::after{
@@ -82,13 +78,7 @@
 			background-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
 
 			& .WarningClose{
-				color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-				background-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
-
-				&:hover{
-					color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
-					background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-				}
+				background-image: var(--close-light);
 			}
 		}
 
@@ -98,13 +88,7 @@
 			background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
 
 			& .WarningClose{
-				color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-				background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-
-				&:hover{
-					color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
-					background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-				}
+				background-image: var(--close-light);
 			}
 		}
 
@@ -114,13 +98,7 @@
 			background-color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
 
 			& .WarningClose{
-				color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-				background-color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
-
-				&:hover{
-					color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig));
-					background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-				}
+				background-image: var(--close-light);
 			}
 		}
 
@@ -130,13 +108,7 @@
 			background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
 
 			& .WarningClose{
-				color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-				background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-
-				&:hover{
-					color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-					background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-				}
+				background-image: var(--close-light);
 			}
 
 			&::after{
@@ -150,14 +122,7 @@
 			background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
 
 			& .WarningClose{
-
-				color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-				background-color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-
-				&:hover{
-					color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
-					background-color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-				}
+				background-image: var(--close-dark);
 			}
 		}
 	}

@@ -39,6 +39,8 @@ class Superselect{
 
 		this.label = 'NONE';
 
+		this.search = true;
+
 		this.searchPlaceholder = 'search';
 
 		this.list = [];
@@ -60,6 +62,10 @@ class Superselect{
 			if(config.list){
 				this.list = config.list;
 			}
+
+			if(typeof(config.search) !== 'undefined' && config.search === false){
+				this.search = false;
+			}
 		}
 
 		this._computedList = this.list;
@@ -78,7 +84,9 @@ class Superselect{
 
 			this.sComp = this.comp.querySelector('.SuperSelectComp');
 
-			this._createSearch();
+			if(this.search){
+				this._createSearch();
+			}
 			this._createList();
 
 			this.searchComp = this.sComp.querySelector('input');
@@ -118,14 +126,25 @@ class Superselect{
 				this.active = e.target;
 			});
 
-			this.searchComp.addEventListener('keyup', (e) => {
+			this.listComp.addEventListener('click', (e) => {
 
-				Debounce(() => {
+				if(e.target.nodeName == 'LABEL'){
 
-					this._filter(e.target.value);
-
-				}, 500, 'superselect'+this.id);
+					this.blur();
+				}
 			});
+
+			if(this.search){
+
+				this.searchComp.addEventListener('keyup', (e) => {
+
+					Debounce(() => {
+
+						this._filter(e.target.value);
+
+					}, 500, 'superselect'+this.id);
+				});
+			}
 
 			this._render();
 			this._load();
@@ -353,6 +372,13 @@ class Superselect{
 	focus(){
 		this.comp.focus();
 		this.active.scrollIntoView();
+	}
+
+	blur(){
+
+		this.comp.focus();
+		this.comp.blur();
+		this.lastEvent = 'blur';
 	}
 
 	reset(){

@@ -45,9 +45,11 @@
 				width: 100%;
 				border: none;
 				outline: none;
-				color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 				background-color: transparent;
-				font-size: 1.4rem;
+				background-image: var(--close-x);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: var(--field-h) var(--field-h);
 				cursor: pointer;
 			}
 		}

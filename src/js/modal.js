@@ -56,7 +56,7 @@ class Modal{
 			this.options.html = `
 				<div class="TopBar">
 					<div class="Move">`+this.options.title+`</div>
-					<div class="Close"><button data-skit="close">⨉</button></div>
+					<div class="Close"><button data-skit="close"></button></div>
 				</div>
 				<div class="ModalContent">
 					<div class="pd1">
