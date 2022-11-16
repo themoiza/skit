@@ -1,0 +1,19 @@
+.Panic{
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: var(--virtual-top);
+	overflow-y: auto;
+	overflow-x: none;
+	top: 0;
+	left: 0;
+	color: hsl(var(--light-hue) var(--light-sat) var(--light-lig));
+	background-color: hsl(var(--danger-hue) var(--danger-sat) var(--danger-lig));
+	padding: var(--pd);
+	z-index: 9995;
+}
+
+.InPanic{
+
+	--virtual-top: 50px;
+}

@@ -16,6 +16,11 @@
 	line-height: var(--field-h);
 	padding: 0 var(--pd);
 	vertical-align: middle;
+	animation-duration: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
 
 	&:focus{
 		box-shadow: 0 0 0 2px hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig) / 10%);

@@ -170,7 +170,21 @@
 	}
 }
 
+@mixin MixinMaxCh{
+
+	$i: 10;
+
+	@while $i <= 1000 {
+
+		.max#{$i}ch{ 
+			max-width: #{$i}ch; 
+		}
+		$i: $i + 1;
+	}
+}
+
 @include MixinCalc;
 @include MixinMidthP;
 @include MixinWidthPX;
 @include MixinMgPd;
+@include MixinMaxCh;

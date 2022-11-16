@@ -1,0 +1,17 @@
+.StateLoading{
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9995;
+	top: 0;
+	left: 0;
+	right: 0;
+	border: none;
+	outline: none;
+	width: 50vw;
+	height: 3px;
+	will-change: width;
+	background-color: hsl(var(--sec-hue) var(--sec-sat) var(--sec-lig)) !important;
+    transition: width .5s ease-in-out;
+}

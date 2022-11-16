@@ -14,13 +14,14 @@
 	font-size: calc(var(--font-size) * 1.25);
 	font-weight: bold;
 	user-select: none;
+	animation-duration: 0;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-o-user-select: none;
 
 	&::backdrop{
-		background: rgba(#000000, .5);
+		background: rgba(#000000, .8);
 	}
 
 	&::after{

@@ -1,4 +1,4 @@
-window.Confirm = function(obj){
+window.Confirm = (obj) => {
 
 	if(obj.ok){
 
@@ -13,7 +13,7 @@ window.Confirm = function(obj){
 				`+message+`
 			</div>
 			<div class="ConfirmActions">
-				<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button>
+				<button id="Confirm-ok" class="`+obj.okClass+`">`+obj.ok+`</button>
 			</div>`;
 
 		if(obj.no !== false){
@@ -24,7 +24,7 @@ window.Confirm = function(obj){
 					`+message+`
 				</div>
 				<div class="ConfirmActions">
-					<button id="Confirm-ok" class="`+obj.okclass+`">`+obj.ok+`</button> <button id="Confirm-no" class="`+obj.noclass+`">`+obj.no+`</button> 
+					<button id="Confirm-ok" class="`+obj.okClass+`">`+obj.ok+`</button> <button id="Confirm-no" class="`+obj.noClass+`">`+obj.no+`</button> 
 				</div>`;
 		}
 
@@ -52,8 +52,8 @@ window.Confirm = function(obj){
 				document.getElementById('Confirm').close();
 				document.body.classList.remove('NoScroll');
 
-				if(obj.cancelFn){
-					obj.cancelFn();
+				if(obj.bdFn){
+					obj.bdFn();
 				}
 			}
 		});
@@ -81,66 +81,27 @@ window.Confirm = function(obj){
 			}
 		});
 
-		document.getElementById('Confirm-no').addEventListener('click', (e) => {
+		if(document.getElementById('Confirm-no')){
 
-			document.getElementById('Confirm').close();
-			document.body.classList.remove('NoScroll');
-
-			if(obj.noFn){
-				obj.noFn();
-			}
-		});
-
-		document.getElementById('Confirm-no').addEventListener('keyup', (e) => {
-
-			if(e.keyCode == 13){
-
+			document.getElementById('Confirm-no').addEventListener('click', (e) => {
+	
 				document.getElementById('Confirm').close();
 				document.body.classList.remove('NoScroll');
-				obj.noFn();
-			}
-		});
-	}
-};
-
-window.Copy = {
-
-	id: (id) => {
-
-		if(document.getElementById(id)){
-
-			var el = document.getElementById(id);
-
-			var tx = document.createElement('textarea');
-			tx.textContent = el.value ?? el.textContent.replace(/\s+$/, '').replace(/^\s+/, '');
-			tx.focus();
-			tx.classList.add('hidden');
-			tx.style.width = '1px';
-			tx.style.height = '1px';
-			document.body.appendChild(tx);
-			tx.select();
-			document.execCommand('copy');
-		
-			window.setTimeout(() => {
-				tx.parentNode.removeChild(tx);
-			}, 10);
-		}
-	},
-
-	string: (t) => {
-
-		var tx = document.createElement('textarea');
-		tx.textContent = t;
-		tx.focus();
-		tx.classList.add('hidden');
-		tx.style.width = '1px';
-		tx.style.height = '1px';
-		document.body.appendChild(tx);
-		tx.select();
-		document.execCommand('copy');
 	
-		window.setTimeout(() => {
-			tx.parentNode.removeChild(tx);
-		}, 10);
+				if(obj.noFn){
+					obj.noFn();
+				}
+			});
+	
+			document.getElementById('Confirm-no').addEventListener('keyup', (e) => {
+	
+				if(e.keyCode == 13){
+	
+					document.getElementById('Confirm').close();
+					document.body.classList.remove('NoScroll');
+					obj.noFn();
+				}
+			});
+		}
 	}
 };
