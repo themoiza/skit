@@ -22,8 +22,11 @@ if(typeof(SkitConfig) == 'undefined'){
 
 window.startMVC = () => {
 
-	window.mvc = new Mvc();
-	mvc.init(SkitConfig.MVC.id);
+	if(SkitConfig.MVC.allow){
+
+		window.mvc = new Mvc();
+		mvc.init(SkitConfig.MVC.id);
+	}
 };
 
 document.addEventListener('DOMContentLoaded', () => {
