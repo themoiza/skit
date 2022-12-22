@@ -37,7 +37,9 @@ window.Tooltip = {
 
 			var position = e.target.getAttribute('data-title-position') ?? 'top';
 
-			var top = (rect.top - tip.clientHeight - 15).toFixed(0);
+			var virtualTop = Skit.virtualTop ?? 0;
+
+			var top = (rect.top - Number(virtualTop) - tip.clientHeight - 15).toFixed(0);
 			var left = (rect.left+(rect.width / 2)-(tip.clientWidth / 2)).toFixed(0);
 
 			if(top < 5 || position == 'bottom'){

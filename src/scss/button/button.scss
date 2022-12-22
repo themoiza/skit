@@ -39,21 +39,24 @@
 }
 
 .BtnTiny{
-	font-size: calc(var(--font-size) * 0.65);
 	height: calc((var(--field-h) * 0.7));
+	line-height: calc((var(--field-h) * 0.7));
+	font-size: calc(var(--font-size) * 0.7 );
 	padding: 0 calc(var(--pd));
 }
 
 .BtnMed{
-	font-size: calc(var(--font-size) * 1.15);
 	height: calc((var(--field-h) * 1.25));
+	line-height: calc((var(--field-h) * 1.25));
+	font-size: calc(var(--font-size) * 1.15);
 	padding: 0 calc(var(--pd) * 2);
 }
 
 .BtnLarge{
-	font-size: calc(var(--font-size) * 1.25);
-	height: calc((var(--field-h) * 1.55));
-	padding: 0 calc(var(--pd) * 2.2);
+	height: calc((var(--field-h) * 1.6));
+	line-height: calc((var(--field-h) * 1.6));
+	font-size: calc(var(--font-size) * 1.4);
+	padding: 0 calc(var(--pd) * 2);
 }
 
 .BtnPri{
@@ -157,12 +160,34 @@
 	}
 }
 
+.BtnInv{
+
+	background-color: transparent;
+	box-shadow: none;
+	color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+
+	&:focus{
+		box-shadow: none;
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	}
+	&:hover{
+		box-shadow: none;
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	}
+	&:active{
+		box-shadow: none;
+		color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+	}
+}
+
 .BtnJoinLeft{
 	border-radius: 0 var(--rd) var(--rd) 0;
 }
+
 .BtnJoinRight{
 	border-radius: var(--rd) 0 0 var(--rd);
 }
+
 .BtnJoin{
 	border-radius: 0 0 0 0;
 }

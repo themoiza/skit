@@ -21,7 +21,7 @@
 		font-size: 0.9rem;
 	}
 }
-table{
+.Table{
 
 	width: 100%;
 	border-collapse: collapse;
@@ -54,6 +54,54 @@ table{
 			border: 1px solid hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig-soft));
 			padding: .5rem 0.75rem;
 			font-size: 0.85rem;
+		}
+
+		& tr{
+
+			&:hover{
+				background-color: rgba(0,0,0,0.08);
+			}
+		}
+	}
+}
+.GridTable{
+
+	width: 100%;
+	border-collapse: collapse;
+
+	& thead{
+
+		background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+		& th{
+			color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+			border: 1px solid hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig-soft));
+			padding: 0.6rem;
+			font-weight: bold;
+			font-size: 0.85rem;
+		}
+
+		& .GridTableActions{
+			width: 6rem;
+		}
+	}
+
+	& tbody{
+
+		background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+
+		& tr:nth-child(even){
+			background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+		}
+
+		& tr:nth-child(odd){
+			background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+		}
+
+		& td{
+			color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+			border: 1px solid hsl(var(--foreground-hue), var(--foreground-sat), var(--foreground-lig-soft));
+			padding: 0.6rem;
+			font-size: 0.8rem;
 		}
 
 		& tr{

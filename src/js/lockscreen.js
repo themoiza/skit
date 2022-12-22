@@ -61,6 +61,10 @@ window.LockScreen = {
 			Debounce(() => {
 				LockScreen.unlock();
 			}, LockScreen.timeout, 'IdLockScreen');
+
+		}else{
+
+			document.getElementById('IdLockScreen').style = null;
 		}
 	},
 	unlock: () => {

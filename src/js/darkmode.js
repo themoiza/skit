@@ -89,5 +89,3 @@ window.Darkmode = {
 		Darkmode._listen(c, dark);
 	}
 };
-
-Darkmode.load();

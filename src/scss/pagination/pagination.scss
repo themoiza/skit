@@ -1,0 +1,20 @@
+.Pagination{
+	display: block;
+	width: 100%;
+
+	& .PagLeft{
+		background-image: var(--pagination-left);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 1.5rem 1.5rem;
+		width: var(--field-h);
+	}
+
+	& .PagRight{
+		background-image: var(--pagination-right);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 1.5rem 1.5rem;
+		width: var(--field-h);
+	}
+}

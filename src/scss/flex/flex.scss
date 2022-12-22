@@ -188,3 +188,16 @@
 @include MixinWidthPX;
 @include MixinMgPd;
 @include MixinMaxCh;
+
+
+@media all and (max-width: 1023px){
+	.Flex{
+		flex-direction: column;
+	}
+
+	*[class*="ColFlex"]{
+		width: 100% !important;
+		padding-left: calc(var(--pd) * 1.5) !important;
+		padding-right: calc(var(--pd) * 1.5) !important;
+	}
+}
