@@ -2,6 +2,7 @@
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
+	-webkit-tap-highlight-color: transparent;
 
 	& .label{
 		display: block;
@@ -114,6 +115,7 @@
 	& .Radio,
 	& .Checkbox{
 		appearance: none;
+		color: inherit;
 		cursor: pointer;
 		border: none;
 		width: var(--field-h);
@@ -124,33 +126,54 @@
 
 	& .Radio::before,
 	& .Checkbox::before{
-		color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+		color: inherit;
 		position: absolute;
 		top: 0;
 		left: 0;
 		line-height: calc(var(--field-h) - 0.3rem);
 		font-family: var(--font-family);
+		font-style: normal !important;
 		font-size: var(--field-h);
 	}
 
 	& .Radio::before{
 		content: "○"; /*○●*/
+		line-height: calc(var(--field-h) - 0.3rem);
+		font-family: var(--font-family);
+		font-style: normal !important;
+		font-size: var(--field-h);
 	}
 
 	& .Checkbox::before{
 		content: "□"; /*□▣*/
+		line-height: calc(var(--field-h) - 0.3rem);
+		font-family: var(--font-family);
+		font-style: normal !important;
+		font-size: var(--field-h);
 	}
 
 	& .Radio:checked:before{
 		content: "●";
+		line-height: calc(var(--field-h) - 0.3rem);
+		font-family: var(--font-family);
+		font-style: normal !important;
+		font-size: var(--field-h);
 	}
 
 	& .Checkbox:checked::before{
 		content: "▣";
+		line-height: calc(var(--field-h) - 0.3rem);
+		font-family: var(--font-family);
+		font-style: normal !important;
+		font-size: var(--field-h);
 	}
 
 	& .Checkbox:indeterminate::before{
-		content: "⊟";
+		content: "◫";
+		line-height: calc(var(--field-h) - 0.3rem);
+		font-family: var(--font-family);
+		font-style: normal !important;
+		font-size: var(--field-h);
 	}
 
 	& .Radio + label,
@@ -333,7 +356,7 @@
 	border-radius: 0 0 0 0;
 }
 
-.toggle{
+.Toggle1{
 
 	position: relative;
 	display: flex;
@@ -351,7 +374,7 @@
 			content: "" !important;
 			width: 4rem;
 			height: 2rem;
-			background-color: hsl(var(--pri-hue) var(--pri-sat) var(--pri-lig));
+			background-color: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
 			position: absolute;
 			left: 0;
 			z-index: 0;
@@ -359,25 +382,24 @@
 		}
 
 		&::before{
-			content: "☼" !important;
+			content: "";
 			text-align: center;
 			font-size: 1.8rem;
 			line-height: 1.8rem;
 			font-weight: bold;
-			width: 1.7rem;
-			height: 1.7rem;
-			background-color: #888;
-			color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
+			width: 1.5rem;
+			height: 1.5rem;
+			background-color: hsl(var(--background-hue) var(--background-sat) var(--background-lig));
 			border-radius: 50%;
 			position: absolute;
-			top: 0.15rem;
-			left: 0.15rem;
+			top: 0.25rem;
+			left: 0.25rem;
 			z-index: 1;
-			transition: 0.1s;
+			transition: 0.05s;
 		}
 
 		&:checked::before{
-			content: "☽" !important;
+			content: "";
 			left: 2.1rem;
 			transition: 0.1s;
 		}

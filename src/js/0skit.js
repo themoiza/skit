@@ -13,6 +13,12 @@ window.Skit = {
 
 	hasPlusAnimations(){
 		return true;
+	},
+
+	// NUMBER OF MAX WARNINGS TO DISPLAY
+	getWaringLimit(){
+
+		return SkitConfig.Warning.max ?? 5;
 	}
 };
 

@@ -5,7 +5,7 @@ window.Warning = (obj) => {
 	 * title: string required
 	 * message: string not required
 	 * color: string not required
-	 * timeout: integer, mili seconds, not required, default 8000
+	 * timeout: integer, mili seconds, not required, default 10000
 	 * id: string not required
 	 * position: not required default 8
 	 * - 1: left bottom,
@@ -30,18 +30,20 @@ window.Warning = (obj) => {
 		9: 'WarningRightTop'
 	};
 
-	var warnLimit = 5;
-
 	if(obj.title && obj.title != ''){
 
 		var title = String(obj.title);
 		var message = String(obj.message ?? '');
 		var color = String(obj.color ?? '');
-		var timeout = obj.timeout ?? 8000;
-
-		// encodeURIComponent is for security, prevent xss
-		var id = encodeURIComponent(String(obj.id ?? 'warning-id-1'));
+		var timeout = obj.timeout ?? 10000;
 		var position = obj.position ?? 8;
+
+		// CREATE RANDOM ID
+		var id = 'warning'+(Math.random()*1000000).toFixed(0);
+		if(obj.id !== false){
+			// prevent xss
+			id = encodeURIComponent(obj.id);
+		}
 
 		// VALIDATE COLORS
 		if(colors.includes(color)){
@@ -126,7 +128,7 @@ window.Warning = (obj) => {
 		if(!warnLine){
 
 			// LIMIT OF WARNS
-			if(totalCanvas.length < warnLimit){
+			if(totalCanvas.length < Skit.getWaringLimit()){
 
 				var warnLine = document.createElement('div');
 				warnLine.setAttribute('class', 'WarningCanvas');

@@ -1,6 +1,16 @@
+/**
+ * COPY
+ * 
+ * REQUISITOS
+ * - SER O MAIS NATIVO POSSÍVEL
+ * - Copiar partes texto em código HTML.
+ * - Copiar selecionando por um ID
+ * - Copiar uma string
+ */
 
 window.Copy = {
 
+	// COPY BY ID ELEMENT
 	id: (id) => {
 
 		if(document.getElementById(id)){
@@ -23,6 +33,7 @@ window.Copy = {
 		}
 	},
 
+	// COPY STRING
 	string: (t) => {
 
 		var tx = document.createElement('textarea');

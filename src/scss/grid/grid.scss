@@ -23,3 +23,18 @@
 }
 
 @include MixinColGrid;
+
+
+@media all and (max-width: 1023px){
+
+	.GridMobile{
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.GridMobile{
+
+		& *[class*="ColGrid"]{
+			grid-column: span 1 !important;
+		}
+	}
+}
