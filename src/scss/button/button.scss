@@ -1,6 +1,7 @@
 .Btn{
 	cursor: pointer;
 	position: relative;
+	display: inline-block;
 	font-weight: normal;
 	text-align: center;
 	border: none;
@@ -41,7 +42,7 @@
 .BtnTiny{
 	height: calc((var(--field-h) * 0.7));
 	line-height: calc((var(--field-h) * 0.7));
-	font-size: calc(var(--font-size) * 0.7 );
+	font-size: calc(var(--font-size) * 0.9);
 	padding: 0 calc(var(--pd));
 }
 

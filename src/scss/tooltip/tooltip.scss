@@ -25,7 +25,7 @@
 	width: 1rem;
 	height: 1rem;
 	position: absolute;
-	z-index: 5;
+	z-index: 9996;
 	transform: translate(calc(var(--triangle-size) * -1), calc(var(--triangle-size) - 1px));
 	border-style: solid;
 	border-width: var(--triangle-size) var(--triangle-size) 0 var(--triangle-size);
@@ -66,7 +66,7 @@
 
 .TooltipActive{
 	transform: scale(1);
-	z-index: 5;
+	z-index: 9996;
 	opacity: 1;
 	transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
 }

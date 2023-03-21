@@ -131,7 +131,7 @@
 		top: 0;
 		left: 0;
 		line-height: calc(var(--field-h) - 0.3rem);
-		font-family: var(--font-family);
+		font-family: monospace !important;
 		font-style: normal !important;
 		font-size: var(--field-h);
 	}
@@ -139,7 +139,7 @@
 	& .Radio::before{
 		content: "○"; /*○●*/
 		line-height: calc(var(--field-h) - 0.3rem);
-		font-family: var(--font-family);
+		font-family: monospace !important;
 		font-style: normal !important;
 		font-size: var(--field-h);
 	}
@@ -147,7 +147,7 @@
 	& .Checkbox::before{
 		content: "□"; /*□▣*/
 		line-height: calc(var(--field-h) - 0.3rem);
-		font-family: var(--font-family);
+		font-family: monospace !important;
 		font-style: normal !important;
 		font-size: var(--field-h);
 	}
@@ -155,7 +155,7 @@
 	& .Radio:checked:before{
 		content: "●";
 		line-height: calc(var(--field-h) - 0.3rem);
-		font-family: var(--font-family);
+		font-family: monospace !important;
 		font-style: normal !important;
 		font-size: var(--field-h);
 	}
@@ -163,7 +163,7 @@
 	& .Checkbox:checked::before{
 		content: "▣";
 		line-height: calc(var(--field-h) - 0.3rem);
-		font-family: var(--font-family);
+		font-family: monospace !important;
 		font-style: normal !important;
 		font-size: var(--field-h);
 	}
@@ -171,7 +171,7 @@
 	& .Checkbox:indeterminate::before{
 		content: "◫";
 		line-height: calc(var(--field-h) - 0.3rem);
-		font-family: var(--font-family);
+		font-family: monospace !important;
 		font-style: normal !important;
 		font-size: var(--field-h);
 	}
@@ -297,6 +297,40 @@
 	& input:read-only:not(:disabled),
 	& textarea:read-only:not(:disabled){
 		font-style: italic;
+	}
+}
+
+.field-tiny{
+
+	& input[type=color],
+	& input[type=date],
+	& input[type=datetime-local],
+	& input[type=month],
+	& input[type=email],
+	& input[type=file],
+	& input[type=password],
+	& input[type=search],
+	& input[type=time],
+	& input[type=url],
+	& input[type=week],
+	& input[type=number],
+	& input[type=text],
+	& input[type=tel],
+	& select{
+		font-size: calc(var(--font-size) * 0.75);
+		height: calc((var(--field-h) * 0.75));
+		padding: var(--pd);
+	}
+
+	& .Checkbox,
+	& .Radio,
+	& .Checkbox::before,
+	& .Radio::before,
+	& .Checkbox:checked::before,
+	& .Radio:checked::before{
+		font-size: calc(var(--field-h) * 0.75) !important;
+		height: calc(var(--field-h) * 0.75) !important;
+		line-height: calc(var(--field-h) - 0.5rem) !important;
 	}
 }
 
