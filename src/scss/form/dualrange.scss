@@ -1,6 +1,6 @@
 .field{
 
-	.Dualrange{
+	& .Dualrange{
 		position: relative;
 		display: block;
 		height: var(--field-h);
@@ -25,16 +25,12 @@
 		& input[type=range]{
 
 			appearance: none;
-
-			&::-webkit-slider-runnable-track, 
-			&::-webkit-slider-thumb{
-				appearance: none;
-				background-color: transparent;
-			}
-
+			left: 0;
+			right: 0;
 			position: absolute;
-			top: calc(var(--field-h) / 2 - 1px);
 			z-index: 1;
+			top: 50%;
+			transform: translateY(-50%);
 			background: none;
 			pointer-events: none;
 			outline: none;
@@ -42,29 +38,24 @@
 			margin: 0;
 			padding: 0;
 			width: 100%;
+			cursor: inherit;
+
+			&::-webkit-slider-runnable-track, 
+			&::-webkit-slider-thumb{
+				appearance: none;
+				background-color: transparent;
+			}
 
 			&::-webkit-slider-thumb {
+				height: calc(var(--field-h) / 1.5);
+				width: calc(var(--field-h) / 1.5);
 				@include thumb;
-				transform: translateY(-1px);
 			}
 			&::-moz-range-thumb {
+				height: calc(var(--field-h) / 1.9);
+				width: calc(var(--field-h) / 1.9);
 				@include thumb;
-				transform: translateY(-1px);
 			}
-		}
-
-		& input[type=range]:first-child{
-
-			left: 0;
-			right: 0;
-			cursor: inherit;
-		}
-
-		& input[type=range]:last-child{
-
-			left: 0;
-			right: 0;
-			cursor: inherit;
 		}
 
 		&:hover{

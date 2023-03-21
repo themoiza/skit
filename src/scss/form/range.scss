@@ -1,54 +1,70 @@
 .field{
 
 	& .Range{
-		border: none;
-		appearance: none;
-		margin: 0;
-		padding: 0;
+		position: relative;
 		display: block;
-		font-family: var(--font-family);
-		font-size: var(--font-size);
-		color: hsl(var(--dark-hue) var(--dark-sat) var(--dark-lig));
-		background-color: transparent;
-		width: inherit;
 		height: var(--field-h);
-		min-width: 1rem;
-		outline: none;
-		cursor: pointer;
+		min-width: 3rem;
+		width: inherit;
 		touch-action: none;
-	}
 
-	& .Range:focus {
-		outline: none;
-	}
+		&::before{
+			content: "";
+			width: 100%;
+			height: 3px;
+			background: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
+			z-index: 0;
+			position: absolute;
+			left: 0;
+			top: calc(var(--field-h) / 2);
+			transform: translateY(-1px);
+			border-radius: var(--rd);
+			cursor: inherit;
+		}
 
-	& .Range::-webkit-slider-runnable-track {
-		width: 100%;
-		box-shadow: none;
-		background: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
-		border-radius: var(--rd);
-		border: none;
-		height: 3px;
-	}
+		& input[type=range]{
 
-	& .Range::-moz-range-track {
-		width: 100%;
-		box-shadow: none;
-		background: hsl(var(--foreground-hue) var(--foreground-sat) var(--foreground-lig));
-		border-radius: var(--rd);
-		border: none;
-		height: 3px;
-	}
+			appearance: none;
+			left: 0;
+			right: 0;
+			position: absolute;
+			z-index: 1;
+			top: 50%;
+			transform: translateY(-50%);
+			background: none;
+			pointer-events: none;
+			outline: none;
+			border: none;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			cursor: inherit;
 
-	& .Range::-webkit-slider-thumb {
-		@include thumb;
-	}
-	& .Range::-moz-range-thumb {
-		@include thumb;
-	}
+			&::-webkit-slider-runnable-track, 
+			&::-webkit-slider-thumb{
+				appearance: none;
+				background-color: transparent;
+			}
 
-	& .Range:disabled{
-		opacity: 0.5;
-		cursor: not-allowed !important;
+			&::-webkit-slider-thumb {
+				height: calc(var(--field-h) / 1.5);
+				width: calc(var(--field-h) / 1.5);
+				@include thumb;
+			}
+			&::-moz-range-thumb {
+				height: calc(var(--field-h) / 1.9);
+				width: calc(var(--field-h) / 1.9);
+				@include thumb;
+			}
+		}
+
+		&:hover{
+			cursor: pointer;
+		}
+
+		&:disabled:hover,
+		&:disabled::before{
+			cursor: not-allowed;
+		}
 	}
 }
